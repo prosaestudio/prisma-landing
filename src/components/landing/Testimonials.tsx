@@ -104,7 +104,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section className="mt-28" aria-roledescription="carrusel">
+    <section id="experiencias" className="mt-28" aria-roledescription="carrusel">
       <div
         ref={trackRef}
         className="no-scrollbar flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto scroll-smooth px-6 cursor-grab select-none lg:px-12"

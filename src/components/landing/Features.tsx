@@ -137,7 +137,7 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
 
 export function Features() {
   return (
-    <section className="mx-auto mt-28 max-w-[1440px] px-6 lg:px-12">
+    <section id="features" className="mx-auto mt-28 max-w-[1440px] px-6 lg:px-12">
       {features.map((f, i) => (
         <article
           key={f.label}

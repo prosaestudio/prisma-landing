@@ -5,7 +5,7 @@ import { Reveal } from "@/components/landing/Reveal";
 
 export function SpeedBand() {
   return (
-    <section className="relative z-0 -mt-[28vh]">
+    <section id="como-funciona" className="relative z-0 -mt-[28vh]">
       <div className="relative overflow-hidden">
         <img
           src={bgChica.url}
