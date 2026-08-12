@@ -79,6 +79,10 @@ export function Hero() {
             aria-hidden
             className="hero-drift pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
           />
+          <div aria-hidden className="hero-orb hero-orb--1" />
+          <div aria-hidden className="hero-orb hero-orb--2" />
+          <div aria-hidden className="hero-orb hero-orb--3" />
+          <div aria-hidden className="hero-orb hero-orb--4" />
           <Nav />
           <div className="relative px-6 pb-14 pt-16 lg:px-10 lg:pb-20 lg:pt-28">
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
