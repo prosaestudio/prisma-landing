@@ -1,6 +1,6 @@
 import bgChica from "@/assets/bg-chica.png.asset.json";
 import videoPrisma from "@/assets/video-prisma.mp4.asset.json";
-import wordpress from "@/assets/wordpress-black.png.asset.json";
+import wordpress from "@/assets/wordpress-white.png.asset.json";
 
 export function SpeedBand() {
   return (
@@ -47,7 +47,7 @@ export function SpeedBand() {
               width={420}
               height={100}
               loading="lazy"
-              className="h-[70px] w-auto brightness-0 invert lg:mt-4"
+              className="h-[70px] w-auto lg:mt-4"
             />
           </div>
         </div>
