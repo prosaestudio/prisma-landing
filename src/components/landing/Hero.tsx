@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 import heroGradient from "@/assets/hero-gradient.png.asset.json";
+import imgSlider02 from "@/assets/img-slider-02.png.asset.json";
+import site01 from "@/assets/site-01.png.asset.json";
+import site02 from "@/assets/site-02.png.asset.json";
+import site03 from "@/assets/site-03.png.asset.json";
 import wordpressBlack from "@/assets/wordpress-black.png.asset.json";
 import { Nav } from "@/components/landing/Nav";
 
@@ -123,6 +127,7 @@ export function Hero() {
 
   const slide = slides[index] ?? slides[0]!;
   const prompt = slide.prompt;
+  const isBlue = index === 1;
 
   useEffect(() => {
     setTyped("");
@@ -144,7 +149,20 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-4 pt-4 lg:px-6">
-        <div className="relative isolate overflow-hidden rounded-[20px] bg-panel">
+        <div
+          className={`relative isolate overflow-hidden rounded-[20px] transition-colors duration-500 ${
+            isBlue ? "bg-[#0a5b87] text-white" : "bg-panel"
+          }`}
+        >
+          {isBlue ? (
+            <img
+              src={imgSlider02.url}
+              alt=""
+              aria-hidden
+              className="animate-fade-in pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
+            />
+          ) : (
+            <>
           <img
             src={heroGradient.url}
             alt=""
@@ -155,15 +173,38 @@ export function Hero() {
           <div aria-hidden className="hero-orb hero-orb--2" />
           <div aria-hidden className="hero-orb hero-orb--3" />
           <div aria-hidden className="hero-orb hero-orb--4" />
-          <Nav />
+            </>
+          )}
+          <Nav variant={isBlue ? "light" : "dark"} />
           <div className="relative px-6 pb-14 pt-16 lg:px-10 lg:pb-20 lg:pt-28">
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
               <h1
                 key={index}
-                className="animate-fade-in max-w-[820px] font-serif text-[12vw] font-light leading-[0.88] tracking-[-0.06em] sm:text-[64px] lg:text-[86px]"
+                className={`animate-fade-in font-serif text-[12vw] font-light leading-[0.88] tracking-[-0.06em] sm:text-[64px] lg:text-[86px] ${
+                  isBlue ? "max-w-[520px]" : "max-w-[820px]"
+                }`}
               >
                 {slide.lead} <span className="font-medium">{slide.accent}</span>
               </h1>
+              {isBlue ? (
+                <div className="animate-fade-in relative hidden h-[360px] w-full lg:block">
+                  <img
+                    src={site01.url}
+                    alt="Cliente 01"
+                    className="absolute right-[18%] top-0 w-[280px] opacity-90 drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                  />
+                  <img
+                    src={site02.url}
+                    alt="Cliente 02"
+                    className="absolute -right-[6%] top-[110px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                  />
+                  <img
+                    src={site03.url}
+                    alt="Cliente 03"
+                    className="absolute right-[16%] top-[200px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                  />
+                </div>
+              ) : (
               <div className="w-full">
                 <img
                   src={wordpressBlack.url}
@@ -177,6 +218,7 @@ export function Hero() {
                   </p>
                 </div>
               </div>
+              )}
             </div>
 
             <div className="mt-16 flex items-center gap-0" role="tablist" aria-label="Ejemplos">
@@ -189,7 +231,7 @@ export function Hero() {
                   aria-label={s.prompt}
                   onClick={() => setIndex(i)}
                   className={`h-[14px] w-[50px] border border-foreground transition-colors ${
-                    i === index ? "bg-foreground" : "bg-transparent"
+                    i === index ? (isBlue ? "bg-white" : "bg-foreground") : "bg-transparent"
                   } ${i === 0 ? "rounded-l-full" : ""} ${
                     i === slides.length - 1 ? "rounded-r-full" : "border-r-0"
                   }`}
