@@ -168,7 +168,7 @@ export function Hero() {
                 <img
                   src={wordpressBlack.url}
                   alt="WordPress"
-                  className="mb-6 h-[31px] w-auto lg:ml-auto"
+                  className="mb-6 h-[36px] w-auto lg:ml-auto"
                 />
                 <div className="prompt-bar flex h-[61px] items-center px-6">
                   <p className="font-mono text-sm font-light tracking-[-0.06em] text-muted-foreground">
