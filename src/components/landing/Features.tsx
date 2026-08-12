@@ -6,6 +6,7 @@ import mysql from "@/assets/mysql.png.asset.json";
 import css3 from "@/assets/css3.png.asset.json";
 import html5 from "@/assets/html5.png.asset.json";
 import element02 from "@/assets/element-02.png.asset.json";
+import element2 from "@/assets/element-2.png.asset.json";
 import prismaBall3 from "@/assets/prisma-ball-3.png.asset.json";
 
 const orbitPills = [
@@ -114,30 +115,12 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
 
   if (kind === "blocks") {
     return (
-      <div className="relative">
-        <div className="grid grid-cols-4 gap-3">
-        {[
-          "h-14 col-span-2 bg-[linear-gradient(180deg,#f67e8c,#fea07a)]",
-          "h-14 bg-[linear-gradient(180deg,#7f8bd5,#d9b466)]",
-          "h-14 bg-[linear-gradient(180deg,#159390,#faa568)]",
-          "h-32 bg-[linear-gradient(180deg,#f67e8c,#fea07a)]",
-          "h-32 bg-[linear-gradient(180deg,#7f8bd5,#d9b466)]",
-          "h-32 col-span-2 bg-[linear-gradient(180deg,#159390,#faa568)]",
-          "h-20 col-span-2 bg-[linear-gradient(180deg,#f67e8c,#fea07a)]",
-          "h-20 bg-[linear-gradient(180deg,#7f8bd5,#d9b466)]",
-          "h-20 bg-[linear-gradient(180deg,#159390,#faa568)]",
-        ].map((c, i) => (
-          <span key={i} className={`rounded-[15px] ${c}`} />
-        ))}
-        </div>
-        <div className="pointer-events-none absolute left-1/2 top-1/2 w-[88%] -translate-x-1/2 -translate-y-1/2">
-          <div className="rounded-[18px] bg-panel px-6 py-4 shadow-[0_10px_30px_0_oklch(0_0_0/0.14)]">
-            <p className="font-mono text-sm font-light tracking-[-0.06em] text-muted-foreground">
-              Cambia el logo del header por el siguiente....
-            </p>
-          </div>
-        </div>
-      </div>
+      <img
+        src={element2.url}
+        alt="Prompt para cambiar el logo del header sobre un mosaico de colores Prisma"
+        loading="lazy"
+        className="mx-auto w-full max-w-[700px]"
+      />
     );
   }
 
