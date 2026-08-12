@@ -47,7 +47,7 @@ export function SpeedBand() {
               width={420}
               height={100}
               loading="lazy"
-              className="h-[52px] w-auto brightness-0 invert lg:mt-4"
+              className="h-[70px] w-auto brightness-0 invert lg:mt-4"
             />
           </div>
         </div>
