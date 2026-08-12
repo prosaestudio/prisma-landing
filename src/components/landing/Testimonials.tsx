@@ -19,6 +19,24 @@ const quotes = [
     name: "Valeria Delgado,",
     role: "Product Manager en ScaleMedia",
   },
+  {
+    quote:
+      "“Migrar mi dominio y configurar el SSL me tomaba horas con tutoriales. Con PRISMA solo escribí 'conecta mi dominio .cl' y en minutos todo estaba listo, incluyendo el certificado.”",
+    name: "Andrés Fuentes,",
+    role: "CEO en OrigenLab",
+  },
+  {
+    quote:
+      "“Mis editores no tocaban código por miedo a romper algo. Ahora hacen ajustes de diseño, cambian imágenes y corrigen textos directamente desde el chat. La productividad del equipo se disparó.”",
+    name: "Daniela Rojas,",
+    role: "Editora Jefe en Revista Nómada",
+  },
+  {
+    quote:
+      "“El soporte de mi hosting me decía que todo estaba bien, pero mi sitio seguía lento. PRISMA detectó el problema en el primer mensaje, optimizó los scripts y ahora carga en menos de un segundo.”",
+    name: "Felipe Herrera,",
+    role: "Growth Lead en FitClub Pro",
+  },
 ];
 
 export function Testimonials() {
