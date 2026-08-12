@@ -148,6 +148,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
+      <Nav />
       <div className="mx-auto max-w-[1440px] px-4 pt-4 lg:px-6">
         <div
           className={`relative isolate overflow-hidden rounded-[20px] transition-colors duration-500 ${
