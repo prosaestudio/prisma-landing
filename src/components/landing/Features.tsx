@@ -8,6 +8,7 @@ import html5 from "@/assets/html5.png.asset.json";
 import element02 from "@/assets/element-02.png.asset.json";
 import element2 from "@/assets/element-2.png.asset.json";
 import prismaBall3 from "@/assets/prisma-ball-3.png.asset.json";
+import { Reveal, ScrollType } from "@/components/landing/Reveal";
 
 const orbitPills = [
   { label: "Plugins", radius: 200, angle: -150, duration: 34 },
@@ -143,9 +144,13 @@ export function Features() {
           className="grid gap-10 border-t border-border py-20 lg:grid-cols-2 lg:items-center"
         >
           <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-            <p className="label-mono text-muted-foreground">{f.label}</p>
-            <p className="mt-6 max-w-[620px] font-sans text-[36px] font-light leading-[1.05] lg:text-[45px]">
-              {f.copy}
+            <Reveal as="p" className="label-mono text-muted-foreground">
+              {f.label}
+            </Reveal>
+            <ScrollType
+              text={f.copy}
+              className="mt-6 max-w-[620px] font-sans text-[36px] font-light leading-[1.05] lg:text-[45px]"
+            >
               {"ballAfterCopy" in f && f.ballAfterCopy ? (
                 <img
                   src={prismaBall3.url}
@@ -155,11 +160,11 @@ export function Features() {
                   className="ml-2 inline-block h-[0.78em] w-[0.78em] rounded-full align-baseline"
                 />
               ) : null}
-            </p>
+            </ScrollType>
           </div>
-          <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+          <Reveal className={i % 2 === 1 ? "lg:order-1" : ""}>
             <Visual kind={f.visual} />
-          </div>
+          </Reveal>
         </article>
       ))}
     </section>

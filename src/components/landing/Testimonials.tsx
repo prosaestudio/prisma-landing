@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Reveal } from "@/components/landing/Reveal";
 
 const quotes = [
   {
@@ -109,9 +110,11 @@ export function Testimonials() {
         className="no-scrollbar flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto scroll-smooth px-6 cursor-grab select-none lg:px-12"
         style={{ scrollbarWidth: "none" }}
       >
-        {quotes.map((q) => (
-          <blockquote
+        {quotes.map((q, i) => (
+          <Reveal
+            as="blockquote"
             key={q.name}
+            delay={Math.min(i, 2) * 120}
             className="flex w-[86vw] shrink-0 snap-start flex-col justify-between rounded-[27px] border border-foreground bg-background px-10 py-12 font-sans text-[24px] font-light leading-[1.05] sm:w-[440px] lg:text-[26px]"
           >
             <p>{q.quote}</p>
@@ -120,7 +123,7 @@ export function Testimonials() {
               <br />
               <span className="text-muted-foreground">{q.role}</span>
             </footer>
-          </blockquote>
+          </Reveal>
         ))}
       </div>
     </section>
