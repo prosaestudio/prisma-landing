@@ -175,8 +175,7 @@ export function Hero() {
           <div aria-hidden className="hero-orb hero-orb--4" />
             </>
           )}
-          <Nav variant={isBlue ? "light" : "dark"} />
-          <div className="relative px-6 pb-14 pt-16 lg:px-10 lg:pb-20 lg:pt-28">
+          <div className="relative flex min-h-[560px] flex-col px-6 pb-14 pt-16 lg:min-h-[620px] lg:px-10 lg:pb-20 lg:pt-24">
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
               <h1
                 key={index}
@@ -187,21 +186,24 @@ export function Hero() {
                 {slide.lead} <span className="font-medium">{slide.accent}</span>
               </h1>
               {isBlue ? (
-                <div className="animate-fade-in relative hidden h-[360px] w-full lg:block">
+                <div className="animate-fade-in relative hidden h-[380px] w-full lg:block">
                   <img
                     src={site01.url}
                     alt="Cliente 01"
-                    className="absolute right-[18%] top-0 w-[280px] opacity-90 drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                    className="card-float absolute left-[6%] top-0 w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                    style={{ animationDelay: "0s" }}
                   />
                   <img
                     src={site02.url}
                     alt="Cliente 02"
-                    className="absolute -right-[6%] top-[110px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                    className="card-float absolute right-[-8%] top-[96px] w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                    style={{ animationDelay: "1.4s" }}
                   />
                   <img
                     src={site03.url}
                     alt="Cliente 03"
-                    className="absolute right-[16%] top-[200px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                    className="card-float absolute left-[0%] top-[188px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                    style={{ animationDelay: "2.6s" }}
                   />
                 </div>
               ) : (
@@ -221,7 +223,7 @@ export function Hero() {
               )}
             </div>
 
-            <div className="mt-16 flex items-center gap-0" role="tablist" aria-label="Ejemplos">
+            <div className="mt-auto flex items-center gap-0 pt-16" role="tablist" aria-label="Ejemplos">
               {slides.map((s, i) => (
                 <button
                   key={s.prompt}
