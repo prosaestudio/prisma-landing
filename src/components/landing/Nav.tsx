@@ -1,7 +1,12 @@
 import logoHeader from "@/assets/logo-header.png.asset.json";
 import logoWhite from "@/assets/logo-prisma-white.png.asset.json";
 
-const links = ["Solución", "Features", "Integración", "Pricing"];
+const links = [
+  { label: "Solución", href: "#solucion" },
+  { label: "Cómo funciona", href: "#como-funciona" },
+  { label: "Features", href: "#features" },
+  { label: "Experiencias", href: "#experiencias" },
+];
 
 export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const light = variant === "light";
@@ -17,11 +22,11 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
       <nav className="flex flex-1 flex-wrap items-center gap-6 lg:justify-center lg:gap-12">
         {links.map((l) => (
           <a
-            key={l}
-            href="#"
+            key={l.label}
+            href={l.href}
             className="font-aleo text-lg font-light tracking-[-0.05em] transition-opacity hover:opacity-60"
           >
-            {l}
+            {l.label}
           </a>
         ))}
       </nav>
