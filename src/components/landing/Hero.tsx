@@ -2,6 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 import heroGradient from "@/assets/hero-gradient.png.asset.json";
 import imgSlider02 from "@/assets/img-slider-02.png.asset.json";
+import desk from "@/assets/desk.png.asset.json";
+import ball01 from "@/assets/ball-01.png.asset.json";
+import ball02 from "@/assets/ball-02.png.asset.json";
+import ball03 from "@/assets/ball-03.png.asset.json";
 import site01 from "@/assets/site-01.png.asset.json";
 import site02 from "@/assets/site-02.png.asset.json";
 import site03 from "@/assets/site-03.png.asset.json";
@@ -20,11 +24,14 @@ const slides = [
     prompt: "¿Puedes reparar el error de la página de quienes somos?",
   },
   {
-    lead: "Configura dominios y plugins",
-    accent: "conversando",
+    lead: "Diseña y programa",
+    accent: "en wordpress",
+    tail: "sin tocar ningún editor",
     prompt: "Necesito vincular mi dominio.cl",
   },
 ];
+
+const balls = [ball01, ball02, ball03];
 
 const stats = [
   {
@@ -124,10 +131,20 @@ function AnimatedStat({
 export function Hero() {
   const [index, setIndex] = useState(0);
   const [typed, setTyped] = useState("");
+  const [activeBall, setActiveBall] = useState(0);
 
   const slide = slides[index] ?? slides[0]!;
   const prompt = slide.prompt;
   const isBlue = index === 1;
+  const isDesk = index === 2;
+
+  useEffect(() => {
+    if (!isDesk) return;
+    const id = window.setInterval(() => {
+      setActiveBall((v) => (v + 1) % balls.length);
+    }, 1400);
+    return () => window.clearInterval(id);
+  }, [isDesk]);
 
   useEffect(() => {
     setTyped("");
@@ -162,6 +179,8 @@ export function Hero() {
               aria-hidden
               className="animate-fade-in pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
             />
+          ) : isDesk ? (
+            <div aria-hidden className="absolute inset-0 -z-10 bg-panel" />
           ) : (
             <>
           <img
@@ -185,8 +204,38 @@ export function Hero() {
                 }`}
               >
                 {slide.lead} <span className="font-medium">{slide.accent}</span>
+                {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
-              {isBlue ? (
+              {isDesk ? (
+                <div className="animate-fade-in relative h-[300px] w-full lg:h-[420px]">
+                  {balls.map((b, i) => {
+                    const pos = [
+                      "left-[-6%] top-[6%] w-[190px] lg:w-[230px]",
+                      "left-1/2 top-0 w-[190px] -translate-x-1/2 lg:w-[240px]",
+                      "right-[-6%] top-[6%] w-[190px] lg:w-[230px]",
+                    ][i];
+                    const active = i === activeBall;
+                    return (
+                      <img
+                        key={b.url}
+                        src={b.url}
+                        alt=""
+                        aria-hidden
+                        className={`absolute rounded-full transition-all duration-700 ease-out ${pos} ${
+                          active
+                            ? "scale-110 opacity-100 blur-0"
+                            : "scale-95 opacity-50 blur-[1px]"
+                        }`}
+                      />
+                    );
+                  })}
+                  <img
+                    src={desk.url}
+                    alt="Escritorio con Prisma"
+                    className="absolute bottom-0 left-1/2 w-[112%] -translate-x-1/2"
+                  />
+                </div>
+              ) : isBlue ? (
                 <div className="animate-fade-in relative hidden h-[380px] w-full lg:block">
                   <img
                     src={site01.url}
