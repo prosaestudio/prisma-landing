@@ -1,4 +1,5 @@
-import field from "@/assets/field.jpg";
+import bgPrisma from "@/assets/bg-prisma.png.asset.json";
+import cieloForm from "@/assets/cielo-form.png.asset.json";
 
 const fields = [
   { label: "Nombre", name: "nombre", type: "text" },
@@ -9,7 +10,17 @@ const fields = [
 
 export function CtaForm() {
   return (
-    <section id="demo" className="mt-28 rounded-t-[181px] bg-sand px-6 pb-28 pt-28 lg:px-12">
+    <section
+      id="demo"
+      className="relative isolate mt-28 overflow-hidden rounded-t-[181px] bg-sand px-6 pb-28 pt-28 lg:px-12"
+    >
+      <img
+        src={bgPrisma.url}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+      />
       <div className="mx-auto max-w-[1440px]">
         <h2 className="mx-auto max-w-[880px] text-center font-serif text-[10vw] font-light leading-[0.88] tracking-[-0.06em] lg:text-[87px]">
           Dejános tus datos y sé el primero en entrar al prisma
@@ -17,10 +28,8 @@ export function CtaForm() {
 
         <div className="mt-20 grid gap-10 lg:grid-cols-[260px_1fr] lg:items-start">
           <img
-            src={field}
+            src={cieloForm.url}
             alt="Equipo trabajando al aire libre con Prisma"
-            width={1440}
-            height={912}
             loading="lazy"
             className="h-[414px] w-full rounded-[22px] object-cover"
           />
