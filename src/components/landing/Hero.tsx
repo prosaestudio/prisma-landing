@@ -165,13 +165,13 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <Nav />
       <div className="mx-auto max-w-[1440px] px-4 pt-4 lg:px-6">
         <div
           className={`relative isolate overflow-hidden rounded-[20px] transition-colors duration-500 ${
             isBlue ? "bg-[#0a5b87] text-white" : "bg-panel"
           }`}
         >
+          <Nav variant={isBlue ? "light" : "dark"} />
           {isBlue ? (
             <img
               src={imgSlider02.url}
