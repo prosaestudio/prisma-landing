@@ -1,41 +1,69 @@
-import field from "@/assets/field.jpg";
+import bgChica from "@/assets/bg-chica.png.asset.json";
+import videoPrisma from "@/assets/video-prisma.mp4.asset.json";
+import wordpress from "@/assets/wordpress-black.png.asset.json";
 
 export function SpeedBand() {
   return (
-    <section className="relative mt-28 overflow-hidden">
-      <img
-        src={field}
-        alt="Persona trabajando con su laptop en un campo abierto"
-        width={1440}
-        height={912}
-        loading="lazy"
-        className="h-[900px] w-full object-cover"
-      />
-      <div
-        className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0_0_0/0.3)_0%,oklch(0_0_0/0.05)_45%,oklch(0_0_0/0.55)_100%)]"
-        aria-hidden
-      />
-      <div className="absolute inset-x-0 top-0 mx-auto max-w-[1300px] px-6 pt-16 text-center lg:px-12">
-        <h2 className="font-serif text-[8vw] font-light leading-[0.88] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[99px]">
-          Más que un plugin es editar tus sitios en{" "}
-          <span className="font-normal">alta velocidad</span>
-        </h2>
-      </div>
-      <div className="absolute inset-x-0 bottom-16 mx-auto max-w-[1440px] px-6 lg:px-12">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
-          <p className="max-w-[480px] font-mono text-[17px] font-light uppercase leading-[1.5] tracking-[-0.06em] text-[oklch(1_0_0)]">
-            Deja de luchar con el código, los errores de plugins y la maquetación. PRISMA es el
-            agente de IA que arregla, diseña y optimiza tu sitio WordPress en tiempo real a través
-            de conversación.
-          </p>
-          <div className="lg:justify-self-start">
-            <a
-              href="#demo"
-              className="inline-flex items-center justify-center rounded-full border border-[oklch(1_0_0)] px-10 py-3 font-serif text-[29px] font-light tracking-[-0.06em] text-[oklch(1_0_0)] transition-colors hover:bg-[oklch(1_0_0)] hover:text-foreground"
-            >
-              Descargalo ya
-            </a>
+    <section className="mt-24">
+      <div className="relative overflow-hidden">
+        <img
+          src={bgChica.url}
+          alt="Persona editando su sitio WordPress con su laptop en un campo abierto"
+          width={1657}
+          height={1280}
+          loading="lazy"
+          className="h-[980px] w-full object-cover object-[center_26%]"
+        />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.45_0.06_235/0.3)_0%,oklch(0.45_0.06_235/0)_45%)]"
+          aria-hidden
+        />
+
+        <div className="absolute inset-x-0 top-0 mx-auto max-w-[1440px] px-6 pt-14 lg:px-12">
+          <h2 className="text-center font-serif text-[7.5vw] font-light leading-[0.92] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[86px]">
+            Más que un plugin
+            <br />
+            es editar tus sitios en <span className="font-normal">alta velocidad</span>
+          </h2>
+
+          <div className="mt-14 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-[470px]">
+              <p className="font-mono text-[15px] font-light uppercase leading-[1.6] tracking-[-0.02em] text-[oklch(1_0_0)]">
+                Deja de luchar con el código, los errores de plugins y la maquetación. PRISMA es el
+                agente de IA que arregla, diseña y optimiza tu sitio WordPress en tiempo real a
+                través de conversación.
+              </p>
+              <a
+                href="#demo"
+                className="mt-8 inline-flex items-center justify-center rounded-full border border-[oklch(1_0_0)] px-9 py-2.5 font-serif text-[26px] font-light tracking-[-0.06em] text-[oklch(1_0_0)] transition-colors hover:bg-[oklch(1_0_0)] hover:text-foreground"
+              >
+                Descargalo ya
+              </a>
+            </div>
+
+            <img
+              src={wordpress.url}
+              alt="WordPress"
+              width={420}
+              height={100}
+              loading="lazy"
+              className="h-[52px] w-auto brightness-0 invert lg:mt-4"
+            />
           </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto -mt-[140px] max-w-[1440px] px-6 lg:px-12">
+        <div className="overflow-hidden rounded-[30px] bg-panel shadow-[0_30px_80px_-40px_oklch(0_0_0/0.5)]">
+          <video
+            src={videoPrisma.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="aspect-[16/9] w-full object-cover"
+          />
         </div>
       </div>
     </section>
