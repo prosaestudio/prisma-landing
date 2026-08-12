@@ -195,7 +195,7 @@ export function Hero() {
           <div aria-hidden className="hero-orb hero-orb--4" />
             </>
           )}
-          <div className="relative flex min-h-[560px] flex-col px-6 pb-14 pt-16 lg:min-h-[620px] lg:px-10 lg:pb-20 lg:pt-24">
+          <div className="relative flex min-h-[480px] flex-col px-6 pb-8 pt-16 lg:min-h-[520px] lg:px-10 lg:pb-12 lg:pt-24">
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
               <h1
                 key={index}
@@ -273,7 +273,7 @@ export function Hero() {
               )}
             </div>
 
-            <div className="mt-auto flex items-center gap-0 pt-16" role="tablist" aria-label="Ejemplos">
+            <div className="mt-8 flex items-center gap-0 pt-8" role="tablist" aria-label="Ejemplos">
               {slides.map((s, i) => (
                 <button
                   key={s.prompt}
