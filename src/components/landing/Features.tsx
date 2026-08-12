@@ -6,6 +6,7 @@ import mysql from "@/assets/mysql.png.asset.json";
 import css3 from "@/assets/css3.png.asset.json";
 import html5 from "@/assets/html5.png.asset.json";
 import element02 from "@/assets/element-02.png.asset.json";
+import element2 from "@/assets/element-2.png.asset.json";
 import prismaBall3 from "@/assets/prisma-ball-3.png.asset.json";
 
 const orbitPills = [
