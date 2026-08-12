@@ -1,10 +1,17 @@
 import prismaBall from "@/assets/prisma-ball.png.asset.json";
+import prismaBall2 from "@/assets/prisma-ball-2.png.asset.json";
 import php from "@/assets/php.png.asset.json";
 import mysql from "@/assets/mysql.png.asset.json";
 import css3 from "@/assets/css3.png.asset.json";
 import html5 from "@/assets/html5.png.asset.json";
 
-const pills = ["Plugins", "Themes", "Recursos", "Config", "Dominio"];
+const orbitPills = [
+  { label: "Plugins", radius: 200, angle: -150, duration: 34 },
+  { label: "Themes", radius: 168, angle: -35, duration: 28 },
+  { label: "Config", radius: 210, angle: 20, duration: 38 },
+  { label: "Dominio", radius: 160, angle: 95, duration: 31 },
+  { label: "Recursos", radius: 215, angle: 175, duration: 42 },
+];
 
 const features = [
   {
@@ -32,15 +39,53 @@ const features = [
 function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
   if (kind === "pills") {
     return (
-      <div className="flex flex-wrap gap-4">
-        {pills.map((p, i) => (
+      <div className="relative mx-auto aspect-square w-full max-w-[560px]">
+        {[0.42, 0.62, 0.82, 1].map((s) => (
           <span
-            key={p}
-            className="rounded-full bg-panel px-10 py-2 label-mono shadow-[0_4px_6px_0_oklch(0_0_0/0.11)]"
-            style={{ marginLeft: i % 2 === 1 ? "3rem" : undefined }}
+            key={s}
+            aria-hidden
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-border/70"
+            style={{ width: `${s * 100}%`, height: `${s * 100}%` }}
+          />
+        ))}
+
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <img
+            src={prismaBall2.url}
+            alt="Prisma"
+            loading="lazy"
+            className="prisma-pulse h-[120px] w-[120px] rounded-full sm:h-[140px] sm:w-[140px]"
+          />
+        </span>
+
+        {orbitPills.map((p) => (
+          <div
+            key={p.label}
+            className="orbit-rotator"
+            style={
+              {
+                "--orbit-duration": `${p.duration}s`,
+                "--orbit-delay": `${(-p.duration * ((p.angle + 360) % 360)) / 360}s`,
+              } as React.CSSProperties
+            }
           >
-            {p}
-          </span>
+            <div
+              className="absolute left-1/2 top-1/2"
+              style={{ transform: `translate(-50%, -50%) translateX(${p.radius}px)` }}
+            >
+              <span
+                className="orbit-counter block rounded-full bg-panel px-7 py-2 label-mono shadow-[0_4px_10px_0_oklch(0_0_0/0.12)] sm:px-9"
+                style={
+                  {
+                    "--orbit-duration": `${p.duration}s`,
+                    "--orbit-delay": `${(-p.duration * ((p.angle + 360) % 360)) / 360}s`,
+                  } as React.CSSProperties
+                }
+              >
+                {p.label}
+              </span>
+            </div>
+          </div>
         ))}
       </div>
     );
