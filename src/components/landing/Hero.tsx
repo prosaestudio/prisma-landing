@@ -203,17 +203,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-12">
         <dl className="mt-24 grid gap-y-12 border-border sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-0">
           {stats.map((s, i) => (
-            <div
-              key={s.value}
-              className={`px-0 lg:px-8 ${i > 0 ? "lg:border-l lg:border-border" : ""}`}
-            >
-              <dt className="font-serif text-[87px] font-light leading-none tracking-[-0.06em]">
-                {s.value}
-              </dt>
-              <dd className="mt-6 max-w-[240px] font-display text-[15px] leading-[1.1]">
-                {s.copy}
-              </dd>
-            </div>
+            <AnimatedStat key={s.value} value={s.value} copy={s.copy} index={i} />
           ))}
         </dl>
       </div>
