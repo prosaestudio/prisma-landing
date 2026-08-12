@@ -25,6 +25,7 @@
   --font-aleo: "Aleo", Georgia, serif;
   --font-mono: "IBM Plex Mono", monospace;
   --color-sand: var(--sand);
+  --color-form-sand: var(--form-sand);
   --color-panel: var(--panel);
   --color-ink: var(--ink);
   --radius-sm: calc(var(--radius) - 4px);
@@ -72,6 +73,7 @@
 :root {
   --radius: 0.875rem;
   --sand: oklch(0.9 0.015 30);
+  --form-sand: oklch(0.898 0.0155 17.5);
   --panel: oklch(0.968 0 0);
   --ink: oklch(0.145 0 0);
   --gradient-prisma: linear-gradient(
