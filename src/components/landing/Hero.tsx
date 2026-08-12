@@ -180,7 +180,7 @@ export function Hero() {
               className="animate-fade-in pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
             />
           ) : isDesk ? (
-            <div aria-hidden className="absolute inset-0 -z-10 bg-panel" />
+            <div aria-hidden className="absolute inset-0 -z-10 bg-white" />
           ) : (
             <>
           <img
