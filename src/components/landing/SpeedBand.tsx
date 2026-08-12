@@ -4,7 +4,7 @@ import wordpress from "@/assets/wordpress-white.png.asset.json";
 
 export function SpeedBand() {
   return (
-    <section className="mt-24">
+    <section className="relative -mt-[90px]">
       <div className="relative overflow-hidden">
         <img
           src={bgChica.url}
@@ -19,7 +19,7 @@ export function SpeedBand() {
           aria-hidden
         />
 
-        <div className="absolute inset-x-0 top-0 mx-auto max-w-[1440px] px-6 pt-14 lg:px-12">
+        <div className="absolute inset-x-0 top-0 mx-auto max-w-[1440px] px-6 pt-[150px] lg:px-12">
           <h2 className="text-center font-serif text-[7.5vw] font-light leading-[0.92] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[86px]">
             Más que un plugin
             <br />
