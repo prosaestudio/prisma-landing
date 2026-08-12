@@ -64,7 +64,7 @@ export function CtaForm() {
               </button>
             </div>
           </form>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
