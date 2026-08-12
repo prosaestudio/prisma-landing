@@ -273,7 +273,7 @@ export function Hero() {
               )}
             </div>
 
-            <div className="mt-auto flex items-center gap-0 pt-16" role="tablist" aria-label="Ejemplos">
+            <div className="mt-8 flex items-center gap-0 pt-8" role="tablist" aria-label="Ejemplos">
               {slides.map((s, i) => (
                 <button
                   key={s.prompt}
