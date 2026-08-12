@@ -12,23 +12,39 @@ const slides = [
 
 export function Showcase() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const pinRef = useRef<HTMLDivElement>(null);
   const interacting = useRef(false);
 
-  // Auto-advance by scrolling one slide at a time; pauses while the user drags.
+  // Scroll-linked: vertical page scroll through the pinned section drives the
+  // horizontal position, so all three slides are seen on the way down.
   useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const track = trackRef.current;
+    const pin = pinRef.current;
+    if (!track || !pin) return;
 
-    const id = window.setInterval(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
       if (interacting.current) return;
-      const card = el.firstElementChild as HTMLElement | null;
-      if (!card) return;
-      const step = card.offsetWidth + 24;
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
-      el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: "smooth" });
-    }, 5000);
-    return () => window.clearInterval(id);
+      const rect = pin.getBoundingClientRect();
+      const total = pin.offsetHeight - window.innerHeight;
+      if (total <= 0) return;
+      const progress = Math.min(1, Math.max(0, -rect.top / total));
+      const max = track.scrollWidth - track.clientWidth;
+      track.scrollLeft = max * progress;
+    };
+    const onScroll = () => {
+      if (!raf) raf = window.requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
   }, []);
 
   // Click-and-drag with the mouse (touch scrolling is native).
@@ -78,9 +94,11 @@ export function Showcase() {
 
   return (
     <section className="relative z-10 mt-28" aria-roledescription="carrusel">
+      <div ref={pinRef} className="relative h-[260vh]">
+        <div className="sticky top-0 flex h-screen items-center">
       <div
         ref={trackRef}
-        className="no-scrollbar flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto scroll-smooth cursor-grab select-none"
+        className="no-scrollbar flex w-full snap-x items-stretch gap-6 overflow-x-auto cursor-grab select-none"
         style={{ scrollbarWidth: "none" }}
       >
         {slides.map((s, i) => (
@@ -99,6 +117,8 @@ export function Showcase() {
             />
           </figure>
         ))}
+      </div>
+        </div>
       </div>
     </section>
   );
