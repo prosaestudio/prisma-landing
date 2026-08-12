@@ -1,6 +1,7 @@
 import bgChica from "@/assets/bg-chica.png.asset.json";
 import videoPrisma from "@/assets/video-prisma-mvp.mp4.asset.json";
 import wordpress from "@/assets/wordpress-white.png.asset.json";
+import { Reveal } from "@/components/landing/Reveal";
 
 export function SpeedBand() {
   return (
@@ -20,13 +21,13 @@ export function SpeedBand() {
         />
 
         <div className="absolute inset-x-0 top-0 mx-auto max-w-[1440px] px-6 pt-[150px] lg:px-12">
-          <h2 className="text-center font-serif text-[7.5vw] font-light leading-[0.92] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[86px]">
+          <Reveal as="h2" className="text-center font-serif text-[7.5vw] font-light leading-[0.92] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[86px]">
             Más que un plugin
             <br />
             es editar tus sitios en <span className="font-normal">alta velocidad</span>
-          </h2>
+          </Reveal>
 
-          <div className="mt-14 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <Reveal delay={150} className="mt-14 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-[470px]">
               <p className="font-mono text-[15px] font-light uppercase leading-[1.6] tracking-[-0.02em] text-[oklch(1_0_0)]">
                 Deja de luchar con el código, los errores de plugins y la maquetación. PRISMA es el
@@ -49,7 +50,7 @@ export function SpeedBand() {
               loading="lazy"
               className="h-[70px] w-auto lg:mt-4 lg:-translate-x-[15%]"
             />
-          </div>
+          </Reveal>
         </div>
       </div>
 
