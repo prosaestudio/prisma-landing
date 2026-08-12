@@ -1,7 +1,12 @@
 import logoHeader from "@/assets/logo-header.png.asset.json";
 import logoWhite from "@/assets/logo-prisma-white.png.asset.json";
 
-const links = ["Solución", "Features", "Integración", "Pricing"];
+const links = [
+  { label: "Solución", href: "#solucion" },
+  { label: "Cómo funciona", href: "#como-funciona" },
+  { label: "Features", href: "#features" },
+  { label: "Experiencias", href: "#experiencias" },
+];
 
 export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const light = variant === "light";
