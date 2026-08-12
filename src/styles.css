@@ -299,9 +299,20 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-drift,
-  .hero-orb {
+  .hero-orb,
+  .card-float {
     animation: none;
   }
+}
+
+/* Floating client site cards (hero slide 02) */
+@keyframes card-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-6px, -14px, 0); }
+}
+
+.card-float {
+  animation: card-float 7s ease-in-out infinite;
 }
 
 @utility no-scrollbar {
