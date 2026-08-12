@@ -4,7 +4,7 @@ import wordpress from "@/assets/wordpress-white.png.asset.json";
 
 export function SpeedBand() {
   return (
-    <section className="relative z-0 -mt-[12vh]">
+    <section className="relative z-0 -mt-[28vh]">
       <div className="relative overflow-hidden">
         <img
           src={bgChica.url}
@@ -53,7 +53,7 @@ export function SpeedBand() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto -mt-[60px] max-w-[1440px] px-6 lg:px-12">
+      <div className="relative z-10 mx-auto -mt-[100px] max-w-[1440px] px-6 lg:px-12">
         <div className="overflow-hidden rounded-[30px] bg-panel shadow-[0_30px_80px_-40px_oklch(0_0_0/0.5)]">
           <video
             src={videoPrisma.url}
