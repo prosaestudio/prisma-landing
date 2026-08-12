@@ -49,7 +49,8 @@ export function Hero() {
   const [index, setIndex] = useState(0);
   const [typed, setTyped] = useState("");
 
-  const prompt = slides[index].prompt;
+  const slide = slides[index] ?? slides[0]!;
+  const prompt = slide.prompt;
 
   useEffect(() => {
     setTyped("");
@@ -85,7 +86,7 @@ export function Hero() {
                 key={index}
                 className="animate-fade-in max-w-[820px] font-serif text-[12vw] font-light leading-[0.88] tracking-[-0.06em] sm:text-[64px] lg:text-[86px]"
               >
-                {slides[index].lead} <span className="font-medium">{slides[index].accent}</span>
+                {slide.lead} <span className="font-medium">{slide.accent}</span>
               </h1>
               <div className="w-full">
                 <img
