@@ -1,3 +1,9 @@
+import prismaBall from "@/assets/prisma-ball.png.asset.json";
+import php from "@/assets/php.png.asset.json";
+import mysql from "@/assets/mysql.png.asset.json";
+import css3 from "@/assets/css3.png.asset.json";
+import html5 from "@/assets/html5.png.asset.json";
+
 const pills = ["Plugins", "Themes", "Recursos", "Config", "Dominio"];
 
 const features = [
@@ -42,12 +48,17 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
 
   if (kind === "logos") {
     return (
-      <div className="flex items-center gap-6 rounded-full border border-foreground px-10 py-8">
-        {["PHP", "MySQL", "CSS", "JS"].map((t) => (
-          <span key={t} className="font-display text-xl tracking-[-0.04em]">
-            {t}
-          </span>
-        ))}
+      <div className="flex items-center justify-around gap-6 rounded-full border border-foreground px-8 py-8 sm:px-12">
+        <img
+          src={prismaBall.url}
+          alt="Prisma"
+          loading="lazy"
+          className="h-[70px] w-[70px] shrink-0 rounded-full sm:h-[86px] sm:w-[86px]"
+        />
+        <img src={php.url} alt="PHP" loading="lazy" className="h-9 w-auto shrink-0 sm:h-11" />
+        <img src={mysql.url} alt="MySQL" loading="lazy" className="h-9 w-auto shrink-0 sm:h-11" />
+        <img src={css3.url} alt="CSS3" loading="lazy" className="h-11 w-auto shrink-0 sm:h-14" />
+        <img src={html5.url} alt="HTML5" loading="lazy" className="h-11 w-auto shrink-0 sm:h-14" />
       </div>
     );
   }
