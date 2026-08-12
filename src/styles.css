@@ -311,3 +311,33 @@
     display: none;
   }
 }
+
+/* Orbit satellites (Gestor Universal de Plugins) */
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes prisma-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 oklch(0.8 0.12 330 / 0.35); }
+  50% { transform: scale(1.06); box-shadow: 0 0 34px 10px oklch(0.8 0.12 330 / 0.18); }
+}
+.orbit-rotator {
+  position: absolute;
+  inset: 0;
+  animation: orbit-spin var(--orbit-duration, 30s) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+.orbit-counter {
+  animation: orbit-spin-rev var(--orbit-duration, 30s) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+.prisma-pulse {
+  animation: prisma-pulse 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-rotator, .orbit-counter, .prisma-pulse { animation: none !important; }
+}
