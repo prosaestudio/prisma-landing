@@ -13,7 +13,7 @@ export function Showcase() {
           loading="lazy"
           className="h-[500px] w-full object-cover"
         />
-        <div className="absolute inset-x-10 bottom-24 rounded-[11px] bg-background/70 p-6 backdrop-blur-md">
+        <div className="absolute inset-x-10 bottom-24 rounded-[11px] bg-background/85 p-6 backdrop-blur-md">
           <h3 className="font-serif text-[34px] font-light leading-[0.9] tracking-[-0.06em]">
             Funciona con tus plugins y componentes favoritos
           </h3>

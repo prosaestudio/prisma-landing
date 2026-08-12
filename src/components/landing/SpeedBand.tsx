@@ -9,9 +9,12 @@ export function SpeedBand() {
         width={1440}
         height={912}
         loading="lazy"
-        className="h-[760px] w-full object-cover"
+        className="h-[900px] w-full object-cover"
       />
-      <div className="absolute inset-0 bg-[oklch(0_0_0/0.25)]" aria-hidden />
+      <div
+        className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0_0_0/0.3)_0%,oklch(0_0_0/0.05)_45%,oklch(0_0_0/0.55)_100%)]"
+        aria-hidden
+      />
       <div className="absolute inset-x-0 top-0 mx-auto max-w-[1300px] px-6 pt-16 text-center lg:px-12">
         <h2 className="font-serif text-[8vw] font-light leading-[0.88] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[99px]">
           Más que un plugin es editar tus sitios en{" "}
