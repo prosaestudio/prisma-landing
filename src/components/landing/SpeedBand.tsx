@@ -47,7 +47,7 @@ export function SpeedBand() {
               width={420}
               height={100}
               loading="lazy"
-              className="h-[70px] w-auto lg:mt-4"
+              className="h-[70px] w-auto lg:mt-4 lg:-translate-x-[15%]"
             />
           </div>
         </div>
