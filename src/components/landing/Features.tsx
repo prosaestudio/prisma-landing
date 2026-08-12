@@ -104,8 +104,8 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
           loading="lazy"
           className="h-[70px] w-[70px] shrink-0 rounded-full sm:h-[86px] sm:w-[86px]"
         />
-        <img src={php.url} alt="PHP" loading="lazy" className="h-[44px] w-auto shrink-0 sm:h-[54px]" />
-        <img src={mysql.url} alt="MySQL" loading="lazy" className="h-[44px] w-auto shrink-0 sm:h-[54px]" />
+        <img src={php.url} alt="PHP" loading="lazy" className="h-[53px] w-auto shrink-0 sm:h-[65px]" />
+        <img src={mysql.url} alt="MySQL" loading="lazy" className="h-[53px] w-auto shrink-0 sm:h-[65px]" />
         <img src={css3.url} alt="CSS3" loading="lazy" className="h-[54px] w-auto shrink-0 sm:h-[70px]" />
         <img src={html5.url} alt="HTML5" loading="lazy" className="h-[54px] w-auto shrink-0 sm:h-[70px]" />
       </div>
