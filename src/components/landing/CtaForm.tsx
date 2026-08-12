@@ -1,5 +1,6 @@
 import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import cieloForm from "@/assets/cielo-form.png.asset.json";
+import { Reveal } from "@/components/landing/Reveal";
 
 const fields = [
   { label: "Nombre", name: "nombre", type: "text" },
@@ -22,11 +23,11 @@ export function CtaForm() {
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
       />
       <div className="mx-auto max-w-[1440px]">
-        <h2 className="mx-auto max-w-[700px] text-center font-serif text-[9vw] font-light leading-[0.95] tracking-[-0.04em] lg:text-[58px]">
+        <Reveal as="h2" className="mx-auto max-w-[700px] text-center font-serif text-[9vw] font-light leading-[0.95] tracking-[-0.04em] lg:text-[58px]">
           Dejános tus datos y sé el primero en entrar al prisma
-        </h2>
+        </Reveal>
 
-        <div className="mx-auto mt-14 grid max-w-[1040px] gap-6 lg:grid-cols-[220px_1fr] lg:items-start">
+        <Reveal delay={140} className="mx-auto mt-14 grid max-w-[1040px] gap-6 lg:grid-cols-[220px_1fr] lg:items-start">
           <img
             src={cieloForm.url}
             alt="Equipo trabajando al aire libre con Prisma"
