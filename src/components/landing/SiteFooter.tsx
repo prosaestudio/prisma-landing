@@ -1,4 +1,4 @@
-import logoFooter from "@/assets/logo-footer.png.asset.json";
+import logoFooter from "@/assets/logo-footer-pill.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
@@ -32,7 +32,7 @@ export function SiteFooter() {
             alt=""
             aria-hidden
             loading="lazy"
-            className="mb-4 h-[62px] w-[300px] max-w-full rounded-[10px] object-cover"
+            className="mb-4 h-[62px] w-[300px] max-w-full rounded-[10px] object-fill"
           />
           <div className="flex items-start gap-2">
             <span className="font-display text-[16vw] font-medium leading-[0.72] tracking-[-0.05em] lg:text-[152px]">
