@@ -4,7 +4,7 @@ import wordpress from "@/assets/wordpress-black.png.asset.json";
 
 export function SpeedBand() {
   return (
-    <section className="relative mt-24">
+    <section className="mt-24">
       <div className="relative overflow-hidden">
         <img
           src={bgChica.url}
@@ -12,10 +12,10 @@ export function SpeedBand() {
           width={1657}
           height={1280}
           loading="lazy"
-          className="h-[940px] w-full object-cover object-[center_28%]"
+          className="h-[980px] w-full object-cover object-[center_26%]"
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.45_0.06_235/0.35)_0%,oklch(0.45_0.06_235/0)_40%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.45_0.06_235/0.3)_0%,oklch(0.45_0.06_235/0)_45%)]"
           aria-hidden
         />
 
@@ -26,7 +26,7 @@ export function SpeedBand() {
             es editar tus sitios en <span className="font-normal">alta velocidad</span>
           </h2>
 
-          <div className="mt-16 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div className="mt-14 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-[470px]">
               <p className="font-mono text-[15px] font-light uppercase leading-[1.6] tracking-[-0.02em] text-[oklch(1_0_0)]">
                 Deja de luchar con el código, los errores de plugins y la maquetación. PRISMA es el
@@ -51,22 +51,21 @@ export function SpeedBand() {
             />
           </div>
         </div>
+      </div>
 
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1440px] px-6 lg:px-12">
-          <div className="translate-y-[76%] overflow-hidden rounded-[30px] bg-panel shadow-[0_30px_80px_-40px_oklch(0_0_0/0.5)]">
-            <video
-              src={videoPrisma.url}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="aspect-[16/9] w-full object-cover"
-            />
-          </div>
+      <div className="relative z-10 mx-auto -mt-[140px] max-w-[1440px] px-6 lg:px-12">
+        <div className="overflow-hidden rounded-[30px] bg-panel shadow-[0_30px_80px_-40px_oklch(0_0_0/0.5)]">
+          <video
+            src={videoPrisma.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="aspect-[16/9] w-full object-cover"
+          />
         </div>
       </div>
-      <div className="h-[180px]" aria-hidden />
     </section>
   );
 }
