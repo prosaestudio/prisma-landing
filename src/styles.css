@@ -159,3 +159,26 @@
     color: var(--color-foreground);
   }
 }
+
+@utility bg-prisma {
+  background-image: var(--gradient-prisma);
+}
+
+@utility text-prisma {
+  background-image: var(--gradient-prisma);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility prompt-bar {
+  background-color: var(--color-background);
+  border-radius: 7px;
+  box-shadow: 0 8px 11px 0 oklch(0 0 0 / 0.13);
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  font-size: 1.125rem;
+}
