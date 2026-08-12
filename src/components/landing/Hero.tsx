@@ -78,13 +78,10 @@ function AnimatedStat({
   const visible = useInView(ref);
   const numericMatch = value.match(/^([0-9]+)(.*)$/);
   const [display, setDisplay] = useState(0);
-  const startedRef = useRef(false);
 
   useEffect(() => {
-    if (!visible || !numericMatch || startedRef.current) return;
-    startedRef.current = true;
+    if (!visible || !numericMatch) return;
     const target = Number(numericMatch[1]);
-    const suffix = numericMatch[2];
     const duration = 1400;
     const start = performance.now();
     let raf = 0;
@@ -96,7 +93,7 @@ function AnimatedStat({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [visible, numericMatch]);
+  }, [visible, value]);
 
   const renderedValue = numericMatch
     ? `${display}${numericMatch[2]}`
