@@ -1,5 +1,5 @@
 import bgChica from "@/assets/bg-chica.png.asset.json";
-import videoPrisma from "@/assets/video-prisma.mp4.asset.json";
+import videoPrisma from "@/assets/video-prisma-mvp.mp4.asset.json";
 import wordpress from "@/assets/wordpress-white.png.asset.json";
 
 export function SpeedBand() {
