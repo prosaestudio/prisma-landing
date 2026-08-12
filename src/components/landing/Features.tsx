@@ -5,6 +5,8 @@ import php from "@/assets/php.png.asset.json";
 import mysql from "@/assets/mysql.png.asset.json";
 import css3 from "@/assets/css3.png.asset.json";
 import html5 from "@/assets/html5.png.asset.json";
+import element02 from "@/assets/element-02.png.asset.json";
+import prismaBall3 from "@/assets/prisma-ball-3.png.asset.json";
 
 const orbitPills = [
   { label: "Plugins", radius: 200, angle: -150, duration: 34 },
@@ -33,7 +35,8 @@ const features = [
   {
     label: "Reemplazo y Gestión de Assets",
     copy: "Sube, optimiza o sustituye imágenes, fuentes y archivos indicándoselo en el chat.",
-    visual: "prompt" as const,
+    visual: "assets" as const,
+    ballAfterCopy: true,
   },
 ];
 
@@ -139,11 +142,12 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
   }
 
   return (
-    <div className="prompt-bar flex h-[61px] items-center px-6">
-      <p className="font-mono text-sm font-light tracking-[-0.06em] text-muted-foreground">
-        Cambia el logo del header por el siguiente....
-      </p>
-    </div>
+    <img
+      src={element02.url}
+      alt="Barra de herramientas de assets sobre un degradado Prisma"
+      loading="lazy"
+      className="mx-auto w-full max-w-[560px]"
+    />
   );
 }
 
@@ -159,6 +163,15 @@ export function Features() {
             <p className="label-mono text-muted-foreground">{f.label}</p>
             <p className="mt-6 max-w-[620px] font-sans text-[36px] font-light leading-[1.05] lg:text-[45px]">
               {f.copy}
+              {"ballAfterCopy" in f && f.ballAfterCopy ? (
+                <img
+                  src={prismaBall3.url}
+                  alt=""
+                  aria-hidden
+                  loading="lazy"
+                  className="ml-2 inline-block h-[0.78em] w-[0.78em] rounded-full align-baseline"
+                />
+              ) : null}
             </p>
           </div>
           <div className={i % 2 === 1 ? "lg:order-1" : ""}>
