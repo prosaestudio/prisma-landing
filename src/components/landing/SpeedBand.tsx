@@ -4,7 +4,7 @@ import wordpress from "@/assets/wordpress-white.png.asset.json";
 
 export function SpeedBand() {
   return (
-    <section className="relative -mt-[90px]">
+    <section className="relative z-0 -mt-[45vh]">
       <div className="relative overflow-hidden">
         <img
           src={bgChica.url}
