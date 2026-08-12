@@ -165,13 +165,13 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <Nav />
       <div className="mx-auto max-w-[1440px] px-4 pt-4 lg:px-6">
         <div
           className={`relative isolate overflow-hidden rounded-[20px] transition-colors duration-500 ${
             isBlue ? "bg-[#0a5b87] text-white" : "bg-panel"
           }`}
         >
+          <Nav variant={isBlue ? "light" : "dark"} />
           {isBlue ? (
             <img
               src={imgSlider02.url}
@@ -210,9 +210,9 @@ export function Hero() {
                 <div className="animate-fade-in relative h-[300px] w-full lg:h-[420px]">
                   {balls.map((b, i) => {
                     const pos = [
-                      "left-[-6%] top-[6%] w-[190px] lg:w-[230px]",
-                      "left-1/2 top-0 w-[190px] -translate-x-1/2 lg:w-[240px]",
-                      "right-[-6%] top-[6%] w-[190px] lg:w-[230px]",
+                      "left-[-14%] top-[6%] w-[190px] lg:w-[230px]",
+                      "left-1/2 top-[-4%] w-[190px] -translate-x-1/2 lg:w-[240px]",
+                      "right-[-14%] top-[6%] w-[190px] lg:w-[230px]",
                     ][i];
                     const active = i === activeBall;
                     return (
