@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import prismaBall from "@/assets/prisma-ball.png.asset.json";
 import prismaBall2 from "@/assets/prisma-ball-2.png.asset.json";
 import php from "@/assets/php.png.asset.json";
@@ -66,7 +67,7 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
               {
                 "--orbit-duration": `${p.duration}s`,
                 "--orbit-delay": `${(-p.duration * ((p.angle + 360) % 360)) / 360}s`,
-              } as React.CSSProperties
+              } as CSSProperties
             }
           >
             <div
@@ -79,7 +80,7 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
                   {
                     "--orbit-duration": `${p.duration}s`,
                     "--orbit-delay": `${(-p.duration * ((p.angle + 360) % 360)) / 360}s`,
-                  } as React.CSSProperties
+                  } as CSSProperties
                 }
               >
                 {p.label}
