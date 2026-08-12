@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import heroGradient from "@/assets/hero-gradient.png.asset.json";
 import wordpressBlack from "@/assets/wordpress-black.png.asset.json";
