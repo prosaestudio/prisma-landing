@@ -1,4 +1,3 @@
-import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import cieloForm from "@/assets/cielo-form.png.asset.json";
 import { Reveal } from "@/components/landing/Reveal";
 
@@ -13,15 +12,8 @@ export function CtaForm() {
   return (
     <section
       id="demo"
-      className="relative isolate mt-28 overflow-hidden rounded-t-[181px] bg-sand px-6 pb-16 pt-24 lg:px-12"
+      className="relative z-10 overflow-hidden rounded-t-[181px] bg-form-sand px-6 pb-16 pt-24 lg:px-12"
     >
-      <img
-        src={bgPrisma.url}
-        alt=""
-        aria-hidden
-        loading="lazy"
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
-      />
       <div className="mx-auto max-w-[1440px]">
         <Reveal as="h2" className="mx-auto max-w-[700px] text-center font-serif text-[9vw] font-light leading-[0.95] tracking-[-0.04em] lg:text-[58px]">
           Dejános tus datos y sé el primero en entrar al prisma

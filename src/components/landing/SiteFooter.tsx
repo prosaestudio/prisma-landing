@@ -1,4 +1,4 @@
-import logoFooter from "@/assets/logo-footer-pill.png.asset.json";
+import logoFooter from "@/assets/logo-footer-full.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
@@ -6,7 +6,7 @@ const bottomRight = ["Linkedin", "Instagram", "Whatsapp"];
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 mx-auto -mt-4 max-w-[1180px] px-6 pb-24 lg:px-12">
+    <footer className="relative z-10 mx-auto max-w-[1180px] px-6 pb-24 pt-10 lg:px-12">
       <div className="overflow-hidden rounded-[20px] bg-ink px-8 pb-0 pt-8 text-primary-foreground">
         <nav className="flex flex-wrap items-center justify-center gap-6 lg:justify-end lg:gap-12">
           {top.map((l) => (
@@ -32,7 +32,7 @@ export function SiteFooter() {
             alt=""
             aria-hidden
             loading="lazy"
-            className="mb-3 h-[56px] w-[260px] max-w-full shrink-0 rounded-[8px] object-fill"
+            className="mb-3 h-[62px] w-auto max-w-full shrink-0 object-contain"
           />
           <div className="relative pr-[52px]">
             <span className="block font-display text-[17vw] font-medium leading-[0.7] tracking-[-0.045em] lg:text-[172px]">
