@@ -4,8 +4,8 @@ const links = ["Solución", "Features", "Integración", "Pricing"];
 
 export function Nav() {
   return (
-    <header className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-8 gap-y-4 px-6 py-6 lg:px-12">
-      <a href="/" className="flex items-center">
+    <header className="relative z-50 mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-8 gap-y-4 px-6 py-6 lg:px-12">
+      <a href="/" className="relative z-50 flex items-center">
         <img src={logoHeader.url} alt="Prisma" className="h-8 w-auto" />
       </a>
       <nav className="flex flex-1 flex-wrap items-center gap-6 lg:justify-center lg:gap-12">
