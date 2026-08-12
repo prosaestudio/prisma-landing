@@ -4,7 +4,6 @@ import { CtaForm } from "@/components/landing/CtaForm";
 import { Features } from "@/components/landing/Features";
 import { Hero } from "@/components/landing/Hero";
 import { MuchoMas } from "@/components/landing/MuchoMas";
-import { Nav } from "@/components/landing/Nav";
 import { Showcase } from "@/components/landing/Showcase";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SpeedBand } from "@/components/landing/SpeedBand";
@@ -31,7 +30,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background">
-      <Nav />
       <Hero />
       <Showcase />
       <SpeedBand />
