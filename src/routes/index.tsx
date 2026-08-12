@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import { CtaForm } from "@/components/landing/CtaForm";
 import { Features } from "@/components/landing/Features";
 import { Hero } from "@/components/landing/Hero";
@@ -36,8 +37,17 @@ function Index() {
       <Features />
       <MuchoMas />
       <Testimonials />
-      <CtaForm />
-      <SiteFooter />
+      <div className="relative isolate mt-28">
+        <img
+          src={bgPrisma.url}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <CtaForm />
+        <SiteFooter />
+      </div>
     </main>
   );
 }
