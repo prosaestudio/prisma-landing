@@ -282,7 +282,9 @@ export function Hero() {
                   aria-selected={i === index}
                   aria-label={s.prompt}
                   onClick={() => setIndex(i)}
-                  className={`h-[14px] w-[50px] border border-foreground transition-colors ${
+                  className={`h-[14px] w-[50px] border transition-colors ${
+                    isBlue ? "border-white" : "border-foreground"
+                  } ${
                     i === index ? (isBlue ? "bg-white" : "bg-foreground") : "bg-transparent"
                   } ${i === 0 ? "rounded-l-full" : ""} ${
                     i === slides.length - 1 ? "rounded-r-full" : "border-r-0"
