@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import heroGradient from "@/assets/hero-gradient.png.asset.json";
 import wordpressBlack from "@/assets/wordpress-black.png.asset.json";
@@ -44,6 +44,78 @@ const stats = [
     copy: "De cambios respaldados con puntos de restauración automáticos antes de cada ejecución.",
   },
 ];
+
+function useInView<T extends HTMLElement>(ref: React.RefObject<T | null>) {
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry!.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref]);
+  return inView;
+}
+
+function AnimatedStat({
+  value,
+  copy,
+  index,
+}: {
+  value: string;
+  copy: string;
+  index: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const visible = useInView(ref);
+  const numericMatch = value.match(/^([0-9]+)(.*)$/);
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!visible || !numericMatch) return;
+    const target = Number(numericMatch[1]);
+    const duration = 1400;
+    const start = performance.now();
+    let raf = 0;
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.round(target * eased));
+      if (progress < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [visible, value]);
+
+  const renderedValue = numericMatch
+    ? `${display}${numericMatch[2]}`
+    : value;
+
+  return (
+    <div
+      ref={ref}
+      className={`px-0 lg:px-8 transition-all duration-700 ease-out ${
+        index > 0 ? "lg:border-l lg:border-border" : ""
+      } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+      style={{ transitionDelay: `${index * 120}ms` }}
+    >
+      <dt className="font-serif text-[87px] font-light leading-none tracking-[-0.06em]">
+        {renderedValue}
+      </dt>
+      <dd className="mt-6 max-w-[240px] font-display text-[15px] leading-[1.1]">
+        {copy}
+      </dd>
+    </div>
+  );
+}
 
 export function Hero() {
   const [index, setIndex] = useState(0);
@@ -131,17 +203,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-12">
         <dl className="mt-24 grid gap-y-12 border-border sm:grid-cols-2 lg:grid-cols-5 lg:gap-x-0">
           {stats.map((s, i) => (
-            <div
-              key={s.value}
-              className={`px-0 lg:px-8 ${i > 0 ? "lg:border-l lg:border-border" : ""}`}
-            >
-              <dt className="font-serif text-[87px] font-light leading-none tracking-[-0.06em]">
-                {s.value}
-              </dt>
-              <dd className="mt-6 max-w-[240px] font-display text-[15px] leading-[1.1]">
-                {s.copy}
-              </dd>
-            </div>
+            <AnimatedStat key={s.value} value={s.value} copy={s.copy} index={i} />
           ))}
         </dl>
       </div>
