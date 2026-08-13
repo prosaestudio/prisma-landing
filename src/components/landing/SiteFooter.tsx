@@ -54,29 +54,16 @@ export function SiteFooter() {
           </div>
 
           <div className="mt-8 border-t border-primary-foreground/40 py-4">
-            <nav className="flex flex-wrap items-center justify-between gap-x-10 gap-y-3">
-              <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
-                {bottomLeft.map((l) => (
-                  <a
-                    key={l}
-                    href="#"
-                    className="font-aleo text-[13px] font-light tracking-[-0.03em] transition-opacity hover:opacity-70"
-                  >
-                    {l}
-                  </a>
-                ))}
-              </div>
-              <div className="hidden flex-wrap items-center gap-x-10 gap-y-3 lg:flex">
-                {bottomRight.map((l) => (
-                  <a
-                    key={l}
-                    href="#"
-                    className="font-aleo text-[13px] font-light tracking-[-0.03em] transition-opacity hover:opacity-70"
-                  >
-                    {l}
-                  </a>
-                ))}
-              </div>
+            <nav className="flex flex-wrap items-center gap-x-10 gap-y-3">
+              {bottomLeft.map((l) => (
+                <a
+                  key={l}
+                  href="#"
+                  className="font-aleo text-[13px] font-light tracking-[-0.03em] transition-opacity hover:opacity-70"
+                >
+                  {l}
+                </a>
+              ))}
             </nav>
           </div>
         </div>
