@@ -206,71 +206,73 @@ export function Hero() {
                 {slide.lead} <span className="font-medium">{slide.accent}</span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
-              {isDesk ? (
-                <div className="animate-fade-in relative h-[300px] w-full lg:h-[420px]">
-                  {balls.map((b, i) => {
-                    const pos = [
-                      "left-[-14%] top-[6%] w-[190px] lg:w-[230px]",
-                      "left-1/2 top-[-4%] w-[190px] -translate-x-1/2 lg:w-[240px]",
-                      "right-[-14%] top-[6%] w-[190px] lg:w-[230px]",
-                    ][i];
-                    const active = i === activeBall;
-                    return (
-                      <img
-                        key={b.url}
-                        src={b.url}
-                        alt=""
-                        aria-hidden
-                        className={`absolute rounded-full transition-all duration-700 ease-out ${pos} ${
-                          active
-                            ? "scale-110 opacity-100 blur-0"
-                            : "scale-95 opacity-50 blur-[1px]"
-                        }`}
-                      />
-                    );
-                  })}
-                  <img
-                    src={desk.url}
-                    alt="Escritorio con Prisma"
-                    className="absolute bottom-0 left-1/2 w-[112%] -translate-x-1/2"
-                  />
-                </div>
-              ) : isBlue ? (
-                <div className="animate-fade-in relative hidden h-[380px] w-full lg:block">
-                  <img
-                    src={site01.url}
-                    alt="Cliente 01"
-                    className="card-float absolute left-[6%] top-0 w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
-                    style={{ animationDelay: "0s" }}
-                  />
-                  <img
-                    src={site02.url}
-                    alt="Cliente 02"
-                    className="card-float absolute right-[-8%] top-[96px] w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
-                    style={{ animationDelay: "1.4s" }}
-                  />
-                  <img
-                    src={site03.url}
-                    alt="Cliente 03"
-                    className="card-float absolute left-[0%] top-[188px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
-                    style={{ animationDelay: "2.6s" }}
-                  />
-                </div>
-              ) : (
-              <div className="w-full">
-                <img
-                  src={wordpressBlack.url}
-                  alt="WordPress"
-                  className="mb-6 h-[36px] w-auto lg:ml-auto"
-                />
-                <div className="prompt-bar flex h-[61px] items-center px-6">
-                  <p className="font-mono text-sm font-light tracking-[-0.06em] text-muted-foreground">
-                    {typed}
-                    <span className="ml-0.5 inline-block h-4 w-[1px] animate-pulse bg-foreground align-middle" />
-                  </p>
-                </div>
+              <div className="animate-fade-in relative h-[300px] w-full lg:h-[380px]">
+                {isDesk ? (
+                  <>
+                    {balls.map((b, i) => {
+                      const pos = [
+                        "left-[-14%] top-[6%] w-[190px] lg:w-[230px]",
+                        "left-1/2 top-[-4%] w-[190px] -translate-x-1/2 lg:w-[240px]",
+                        "right-[-14%] top-[6%] w-[190px] lg:w-[230px]",
+                      ][i];
+                      const active = i === activeBall;
+                      return (
+                        <img
+                          key={b.url}
+                          src={b.url}
+                          alt=""
+                          aria-hidden
+                          className={`absolute rounded-full transition-all duration-700 ease-out ${pos} ${
+                            active
+                              ? "scale-110 opacity-100 blur-0"
+                              : "scale-95 opacity-50 blur-[1px]"
+                          }`}
+                        />
+                      );
+                    })}
+                    <img
+                      src={desk.url}
+                      alt="Escritorio con Prisma"
+                      className="absolute bottom-0 left-1/2 w-[112%] -translate-x-1/2"
+                    />
+                  </>
+                ) : isBlue ? (
+                  <>
+                    <img
+                      src={site01.url}
+                      alt="Cliente 01"
+                      className="card-float absolute left-[6%] top-0 w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                      style={{ animationDelay: "0s" }}
+                    />
+                    <img
+                      src={site02.url}
+                      alt="Cliente 02"
+                      className="card-float absolute right-[-8%] top-[96px] w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                      style={{ animationDelay: "1.4s" }}
+                    />
+                    <img
+                      src={site03.url}
+                      alt="Cliente 03"
+                      className="card-float absolute left-[0%] top-[188px] w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+                      style={{ animationDelay: "2.6s" }}
+                    />
+                  </>
+                ) : (
+                  <div className="flex h-full flex-col justify-end">
+                    <img
+                      src={wordpressBlack.url}
+                      alt="WordPress"
+                      className="mb-6 h-[36px] w-auto lg:ml-auto"
+                    />
+                    <div className="prompt-bar flex h-[61px] items-center px-6">
+                      <p className="font-mono text-sm font-light tracking-[-0.06em] text-muted-foreground">
+                        {typed}
+                        <span className="ml-0.5 inline-block h-4 w-[1px] animate-pulse bg-foreground align-middle" />
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
-              )}
             </div>
 
             <div className="mt-8 flex items-center gap-0 pt-8" role="tablist" aria-label="Ejemplos">
