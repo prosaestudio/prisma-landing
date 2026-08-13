@@ -99,17 +99,17 @@ function Visual({ kind }: { kind: (typeof features)[number]["visual"] }) {
 
   if (kind === "logos") {
     return (
-      <div className="flex items-center justify-around gap-6 rounded-full border border-foreground px-8 py-8 sm:px-12">
+      <div className="flex w-full items-center justify-center gap-3 rounded-full border border-foreground px-4 py-4 sm:gap-5 sm:px-8 sm:py-6">
         <img
           src={prismaBall.url}
           alt="Prisma"
           loading="lazy"
-          className="h-[70px] w-[70px] shrink-0 rounded-full sm:h-[86px] sm:w-[86px]"
+          className="h-[50px] w-[50px] shrink-0 rounded-full sm:h-[70px] sm:w-[70px]"
         />
-        <img src={php.url} alt="PHP" loading="lazy" className="h-[53px] w-auto shrink-0 sm:h-[65px]" />
-        <img src={mysql.url} alt="MySQL" loading="lazy" className="h-[53px] w-auto shrink-0 sm:h-[65px]" />
-        <img src={css3.url} alt="CSS3" loading="lazy" className="h-[54px] w-auto shrink-0 sm:h-[70px]" />
-        <img src={html5.url} alt="HTML5" loading="lazy" className="h-[54px] w-auto shrink-0 sm:h-[70px]" />
+        <img src={php.url} alt="PHP" loading="lazy" className="h-[40px] w-auto shrink-0 sm:h-[53px]" />
+        <img src={mysql.url} alt="MySQL" loading="lazy" className="h-[40px] w-auto shrink-0 sm:h-[53px]" />
+        <img src={css3.url} alt="CSS3" loading="lazy" className="h-[42px] w-auto shrink-0 sm:h-[54px]" />
+        <img src={html5.url} alt="HTML5" loading="lazy" className="h-[42px] w-auto shrink-0 sm:h-[54px]" />
       </div>
     );
   }
