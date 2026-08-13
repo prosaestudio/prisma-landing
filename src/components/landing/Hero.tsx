@@ -264,15 +264,17 @@ export function Hero() {
               >
                 {slide.lead}
                 {"lead2" in slide && slide.lead2 ? (
-                  <>
-                    <br className="hidden lg:block" /> {slide.lead2}
-                  </>
+                  <span className="lg:block"> {slide.lead2}</span>
                 ) : null}
-                <br className="md:hidden" />
-                {"lead2" in slide && slide.lead2 ? (
-                  <br className="hidden lg:block" />
-                ) : null}
-                <span className="font-medium">{slide.accent}</span>
+                <span
+                  className={`font-medium ${
+                    "lead2" in slide && slide.lead2
+                      ? "block"
+                      : "max-md:block"
+                  }`}
+                >
+                  {slide.accent}
+                </span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
               <div className="animate-fade-in relative h-[300px] w-full lg:h-[380px]">
