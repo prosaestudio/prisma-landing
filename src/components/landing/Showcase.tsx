@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import c1 from "@/assets/carrousel-01.png.asset.json";
+import c1 from "@/assets/carrousel-01-3.png.asset.json";
 import c2 from "@/assets/carrousel-02.png.asset.json";
 import c3 from "@/assets/carrousel-03.png.asset.json";
 
