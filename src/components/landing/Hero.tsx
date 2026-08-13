@@ -14,7 +14,8 @@ import { Nav } from "@/components/landing/Nav";
 
 const slides = [
   {
-    lead: "Administra tu wordpress completo",
+    lead: "Administra tu",
+    lead2: "wordpress completo",
     accent: "solo con IA",
     prompt: "Quiero cambiar el logo del header...",
   },
