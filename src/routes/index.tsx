@@ -37,14 +37,7 @@ function Index() {
       <Features />
       <MuchoMas />
       <Testimonials />
-      <div className="relative isolate mt-28">
-        <img
-          src={bgPrisma.url}
-          alt=""
-          aria-hidden
-          loading="lazy"
-          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
-        />
+      <div className="mt-28">
         <CtaForm />
         <SiteFooter />
       </div>
