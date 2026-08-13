@@ -21,6 +21,15 @@ export function SpeedBand() {
         />
 
         <div className="absolute inset-x-0 top-0 mx-auto max-w-[1440px] px-6 pt-[150px] lg:px-12">
+          <img
+            src={wordpress.url}
+            alt="WordPress"
+            width={420}
+            height={100}
+            loading="lazy"
+            className="mx-auto mb-6 h-[49px] w-auto object-contain"
+          />
+
           <Reveal as="h2" className="text-center font-serif text-[7.5vw] font-light leading-[0.92] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[86px]">
             Más que un plugin
             <br />
@@ -41,15 +50,6 @@ export function SpeedBand() {
                 Descárgalo ya
               </a>
             </div>
-
-            <img
-              src={wordpress.url}
-              alt="WordPress"
-              width={420}
-              height={100}
-              loading="lazy"
-              className="h-[70px] w-auto lg:mt-4 lg:-translate-x-[15%]"
-            />
           </Reveal>
         </div>
       </div>
