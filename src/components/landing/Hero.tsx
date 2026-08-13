@@ -254,7 +254,7 @@ export function Hero() {
           <div aria-hidden className="hero-orb hero-orb--4" />
             </>
           )}
-          <div className="relative flex min-h-[280px] flex-col px-6 pb-5 pt-14 lg:min-h-[520px] lg:px-10 lg:pb-12 lg:pt-24">
+          <div className="relative flex min-h-[225px] flex-col px-6 pb-4 pt-12 lg:min-h-[520px] lg:px-10 lg:pb-12 lg:pt-24">
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
               <h1
                 key={index}
