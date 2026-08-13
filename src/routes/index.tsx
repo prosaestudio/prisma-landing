@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import { CtaForm } from "@/components/landing/CtaForm";
 import { Features } from "@/components/landing/Features";
 import { Hero } from "@/components/landing/Hero";
