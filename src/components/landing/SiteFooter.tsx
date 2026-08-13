@@ -3,8 +3,8 @@ import logoFooter from "@/assets/logo-footer-5.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = [
-  { label: "powered by Alvarocofre.dev", href: "https://alvarocofre.dev/" },
-  { label: "Prosa Studio", href: "https://prosaestudio.com/" },
+  { prefix: "powered by ", name: "Alvarocofre.dev", href: "https://alvarocofre.dev/" },
+  { name: "Prosa Estudio", href: "https://prosaestudio.com/" },
 ];
 
 export function SiteFooter() {
