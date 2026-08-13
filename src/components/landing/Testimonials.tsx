@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/landing/Reveal";
 
 const quotes = [
@@ -39,24 +40,125 @@ const quotes = [
   },
 ];
 
+function useVisibleCount() {
+  const [visibleCount, setVisibleCount] = useState(3);
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setVisibleCount(w < 768 ? 1 : w < 1024 ? 2 : 3);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return visibleCount;
+}
+
 export function Testimonials() {
+  const visibleCount = useVisibleCount();
+  const cardPercent = 100 / visibleCount;
+  const maxIndex = Math.max(0, quotes.length - visibleCount);
+  const [index, setIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const startXRef = useRef(0);
+  const currentTranslateRef = useRef(0);
+  const prevTranslateRef = useRef(0);
+  const dragThreshold = 60;
+
+  useEffect(() => {
+    setIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isDragging) {
+        setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      }
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [isDragging, maxIndex]);
+
+  const handleDragStart = (clientX: number) => {
+    setIsDragging(true);
+    startXRef.current = clientX;
+    prevTranslateRef.current = -index * cardPercent;
+    currentTranslateRef.current = -index * cardPercent;
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (!isDragging || !trackRef.current) return;
+    const diff = ((clientX - startXRef.current) / trackRef.current.offsetWidth) * 100;
+    currentTranslateRef.current = prevTranslateRef.current + diff;
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    const moved = currentTranslateRef.current - prevTranslateRef.current;
+    if (moved < -dragThreshold && index < maxIndex) {
+      setIndex((prev) => prev + 1);
+    } else if (moved > dragThreshold && index > 0) {
+      setIndex((prev) => prev - 1);
+    }
+  };
+
   return (
-    <section id="experiencias" className="mt-28">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-5 px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-12">
-        {quotes.map((q, i) => (
-          <Reveal
-            as="blockquote"
-            key={q.name}
-            delay={Math.min(i, 2) * 120}
-            className="flex flex-col justify-between rounded-[24px] border border-foreground bg-background px-8 py-9 font-sans text-[18px] font-light leading-[1.08] lg:text-[20px]"
-          >
-            <p>{q.quote}</p>
-            <footer className="mt-8 font-sans text-[13px] leading-[1.3] not-italic">
-              <span className="font-medium">— {q.name}</span>
-              <br />
-              <span className="text-muted-foreground">{q.role}</span>
-            </footer>
-          </Reveal>
+    <section id="experiencias" className="mt-28 overflow-hidden">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+        <Reveal>
+          <h2 className="mb-10 text-center font-serif text-[32px] font-light leading-[1.1] tracking-[-0.04em] lg:text-[48px]">
+            Lo que dicen quienes ya lo usan
+          </h2>
+        </Reveal>
+      </div>
+      <div
+        className="relative mx-auto max-w-[1440px] cursor-grab px-6 active:cursor-grabbing lg:px-12"
+        onMouseDown={(e) => handleDragStart(e.clientX)}
+        onMouseMove={(e) => handleDragMove(e.clientX)}
+        onMouseUp={handleDragEnd}
+        onMouseLeave={handleDragEnd}
+        onTouchStart={(e) => handleDragStart(e.touches[0]!.clientX)}
+        onTouchMove={(e) => handleDragMove(e.touches[0]!.clientX)}
+        onTouchEnd={handleDragEnd}
+      >
+        <div
+          ref={trackRef}
+          className="flex transition-transform duration-700 ease-out"
+          style={{ transform: `translateX(-${index * cardPercent}%)` }}
+        >
+          {quotes.map((q, i) => (
+            <div
+              key={q.name}
+              className="flex-shrink-0 px-2"
+              style={{ width: `${cardPercent}%` }}
+            >
+              <Reveal
+                as="blockquote"
+                delay={Math.min(i, visibleCount - 1) * 120}
+                className="flex h-full flex-col justify-between rounded-[24px] border border-foreground bg-background px-6 py-7 font-sans text-[17px] font-light leading-[1.08] lg:px-8 lg:py-9 lg:text-[19px]"
+              >
+                <p>{q.quote}</p>
+                <footer className="mt-6 font-sans text-[13px] leading-[1.3] not-italic lg:mt-8">
+                  <span className="font-medium">— {q.name}</span>
+                  <br />
+                  <span className="text-muted-foreground">{q.role}</span>
+                </footer>
+              </Reveal>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-8 flex justify-center gap-2">
+        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`h-2 w-2 rounded-full transition-all ${
+              i === index ? "w-6 bg-foreground" : "bg-foreground/30"
+            }`}
+            aria-label={`Ver grupo ${i + 1}`}
+          />
         ))}
       </div>
     </section>
