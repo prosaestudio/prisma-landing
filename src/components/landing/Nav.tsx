@@ -110,7 +110,7 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
           <img
             src={logoWhiteMobile.url}
             alt="Prisma"
-            className="pointer-events-none absolute bottom-0 left-0 z-10 w-[92%] translate-y-[18%]"
+            className="pointer-events-none absolute bottom-0 left-0 z-10 w-[110%] max-w-none translate-y-[18%] object-left"
           />
         </div>
       )}
