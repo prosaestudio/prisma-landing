@@ -66,7 +66,7 @@ export function SiteFooter() {
                   </a>
                 ))}
               </div>
-              <div className="flex flex-wrap items-center gap-x-10 gap-y-3">
+              <div className="hidden flex-wrap items-center gap-x-10 gap-y-3 lg:flex">
                 {bottomRight.map((l) => (
                   <a
                     key={l}
