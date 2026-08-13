@@ -37,7 +37,7 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
   return (
     <>
       <header
-        className={`relative z-50 mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-8 gap-y-4 px-6 py-6 transition-colors duration-500 lg:px-12 ${
+        className={`relative z-50 mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-8 gap-y-4 px-6 py-4 transition-colors duration-500 lg:px-12 lg:py-6 ${
           light ? "text-white" : ""
         }`}
       >
