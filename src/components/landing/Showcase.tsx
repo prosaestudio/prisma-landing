@@ -53,7 +53,7 @@ export function Showcase() {
   }, []);
 
   return (
-    <section className="relative z-10 mt-28" aria-roledescription="carrusel">
+    <section className="relative z-10 mt-12 lg:mt-16" aria-roledescription="carrusel">
       <div ref={pinRef} className="relative h-[300vh]">
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <div
