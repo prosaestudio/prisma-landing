@@ -40,7 +40,24 @@ const quotes = [
   },
 ];
 
+function useVisibleCount() {
+  const [visibleCount, setVisibleCount] = useState(3);
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setVisibleCount(w < 768 ? 1 : w < 1024 ? 2 : 3);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+  return visibleCount;
+}
+
 export function Testimonials() {
+  const visibleCount = useVisibleCount();
+  const cardPercent = 100 / visibleCount;
+  const maxIndex = Math.max(0, quotes.length - visibleCount);
   const [index, setIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -50,24 +67,28 @@ export function Testimonials() {
   const dragThreshold = 60;
 
   useEffect(() => {
+    setIndex((prev) => Math.min(prev, maxIndex));
+  }, [maxIndex]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       if (!isDragging) {
-        setIndex((prev) => (prev + 1) % quotes.length);
+        setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
       }
     }, 4500);
     return () => clearInterval(interval);
-  }, [isDragging]);
+  }, [isDragging, maxIndex]);
 
   const handleDragStart = (clientX: number) => {
     setIsDragging(true);
     startXRef.current = clientX;
-    prevTranslateRef.current = -index * 100;
-    currentTranslateRef.current = -index * 100;
+    prevTranslateRef.current = -index * cardPercent;
+    currentTranslateRef.current = -index * cardPercent;
   };
 
   const handleDragMove = (clientX: number) => {
-    if (!isDragging) return;
-    const diff = ((clientX - startXRef.current) / trackRef.current!.offsetWidth) * 100;
+    if (!isDragging || !trackRef.current) return;
+    const diff = ((clientX - startXRef.current) / trackRef.current.offsetWidth) * 100;
     currentTranslateRef.current = prevTranslateRef.current + diff;
   };
 
@@ -75,10 +96,10 @@ export function Testimonials() {
     if (!isDragging) return;
     setIsDragging(false);
     const moved = currentTranslateRef.current - prevTranslateRef.current;
-    if (moved < -dragThreshold) {
-      setIndex((prev) => Math.min(prev + 1, quotes.length - 1));
-    } else if (moved > dragThreshold) {
-      setIndex((prev) => Math.max(prev - 1, 0));
+    if (moved < -dragThreshold && index < maxIndex) {
+      setIndex((prev) => prev + 1);
+    } else if (moved > dragThreshold && index > 0) {
+      setIndex((prev) => prev - 1);
     }
   };
 
@@ -104,16 +125,17 @@ export function Testimonials() {
         <div
           ref={trackRef}
           className="flex transition-transform duration-700 ease-out"
-          style={{ transform: `translateX(-${index * (100 / 3)}%)` }}
+          style={{ transform: `translateX(-${index * cardPercent}%)` }}
         >
           {quotes.map((q, i) => (
             <div
               key={q.name}
-              className="w-full flex-shrink-0 px-2 md:w-1/2 lg:w-1/3"
+              className="flex-shrink-0 px-2"
+              style={{ width: `${cardPercent}%` }}
             >
               <Reveal
                 as="blockquote"
-                delay={Math.min(i, 2) * 120}
+                delay={Math.min(i, visibleCount - 1) * 120}
                 className="flex h-full flex-col justify-between rounded-[24px] border border-foreground bg-background px-6 py-7 font-sans text-[17px] font-light leading-[1.08] lg:px-8 lg:py-9 lg:text-[19px]"
               >
                 <p>{q.quote}</p>
@@ -128,14 +150,14 @@ export function Testimonials() {
         </div>
       </div>
       <div className="mt-8 flex justify-center gap-2">
-        {quotes.map((_, i) => (
+        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}
             className={`h-2 w-2 rounded-full transition-all ${
               i === index ? "w-6 bg-foreground" : "bg-foreground/30"
             }`}
-            aria-label={`Ver testimonio ${i + 1}`}
+            aria-label={`Ver grupo ${i + 1}`}
           />
         ))}
       </div>
