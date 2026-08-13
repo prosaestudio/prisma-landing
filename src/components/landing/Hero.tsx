@@ -254,7 +254,7 @@ export function Hero() {
           <div aria-hidden className="hero-orb hero-orb--4" />
             </>
           )}
-          <div className="relative flex min-h-[420px] flex-col px-6 pb-8 pt-14 lg:min-h-[520px] lg:px-10 lg:pb-12 lg:pt-24">
+          <div className="relative flex min-h-[330px] flex-col px-6 pb-8 pt-14 lg:min-h-[520px] lg:px-10 lg:pb-12 lg:pt-24">
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
               <h1
                 key={index}
@@ -277,7 +277,7 @@ export function Hero() {
                 </span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
-              <div className="animate-fade-in relative h-[300px] w-full lg:h-[380px]">
+              <div className="animate-fade-in relative h-[220px] w-full lg:h-[380px]">
                 {isDesk ? (
                   <>
                     {balls.map((b, i) => {
