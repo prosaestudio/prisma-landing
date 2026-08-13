@@ -87,7 +87,7 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
             <X className="h-9 w-9" strokeWidth={1.25} />
           </button>
 
-          <nav className="relative z-10 flex h-full flex-col items-start gap-6 px-7 pt-24">
+          <nav className="relative z-10 flex h-full flex-col items-start justify-end gap-6 px-7 pb-40">
             {links.map((l) => (
               <a
                 key={l.label}
