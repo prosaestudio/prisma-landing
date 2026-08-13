@@ -71,18 +71,18 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
     </header>
 
       {open && (
-        <div className="fixed inset-0 z-[100] overflow-hidden bg-black text-white animate-fade-in md:hidden">
+        <div className="fixed inset-0 z-[100] overflow-hidden bg-black text-white animate-slide-in-right md:hidden">
           <img
             src={bgMobile.url}
             alt=""
             aria-hidden
-            className="pointer-events-none absolute bottom-0 left-0 w-[130%] max-w-none translate-y-[12%] opacity-90"
+            className="pointer-events-none absolute bottom-0 left-0 w-[130%] max-w-none translate-y-[12%] opacity-90 animate-fade-in"
           />
           <button
             type="button"
             aria-label="Cerrar menú"
             onClick={() => setOpen(false)}
-            className="absolute right-6 top-6 z-10 text-white"
+            className="absolute right-6 top-6 z-10 text-white animate-fade-in transition-transform duration-300 hover:rotate-90"
           >
             <X className="h-9 w-9" strokeWidth={1.25} />
           </button>
