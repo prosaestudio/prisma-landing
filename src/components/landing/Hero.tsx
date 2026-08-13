@@ -261,7 +261,9 @@ export function Hero() {
                   isBlue ? "max-w-[520px]" : "max-w-[820px]"
                 }`}
               >
-                {slide.lead} <span className="font-medium">{slide.accent}</span>
+                {slide.lead}
+                <br className="md:hidden" />
+                <span className="font-medium">{slide.accent}</span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
               <div className="animate-fade-in relative h-[300px] w-full lg:h-[380px]">
