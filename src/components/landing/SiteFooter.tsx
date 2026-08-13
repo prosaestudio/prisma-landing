@@ -3,7 +3,7 @@ import logoFooter from "@/assets/logo-footer-5.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = [
-  { prefix: "powered by ", name: "Alvarocofre.dev", href: "https://alvarocofre.dev/" },
+  { name: "Alvarocofre.dev", href: "https://alvarocofre.dev/" },
   { name: "Prosa Estudio", href: "https://prosaestudio.com/" },
 ];
 
@@ -46,18 +46,22 @@ export function SiteFooter() {
 
           <div className="mt-8 border-t border-primary-foreground/40 py-4">
             <nav className="flex flex-wrap items-center gap-x-10 gap-y-3">
-              {bottomLeft.map((l) => (
-                <a
-                  key={l.name}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-aleo text-[13px] font-light tracking-[-0.03em] transition-opacity hover:opacity-70"
-                >
-                  {l.prefix}
-                  <span className="font-semibold">{l.name}</span>
-                </a>
-              ))}
+              <span className="font-aleo text-[13px] font-light tracking-[-0.03em]">
+                powered by{" "}
+                {bottomLeft.map((l, i) => (
+                  <span key={l.name}>
+                    <a
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold transition-opacity hover:opacity-70"
+                    >
+                      {l.name}
+                    </a>
+                    {i === 0 && <span className="mx-1">y</span>}
+                  </span>
+                ))}
+              </span>
             </nav>
           </div>
         </div>
