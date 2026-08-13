@@ -2,10 +2,10 @@ import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import logoFooter from "@/assets/logo-footer-5.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
-const bottomLeft = [
-  { prefix: "powered by ", name: "Alvarocofre.dev", href: "https://alvarocofre.dev/" },
-  { name: "Prosa Estudio", href: "https://prosaestudio.com/" },
-];
+const poweredBy = {
+  href: "https://alvarocofre.dev/",
+  studioHref: "https://prosaestudio.com/",
+};
 
 export function SiteFooter() {
   return (
