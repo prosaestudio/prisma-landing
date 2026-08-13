@@ -59,12 +59,14 @@ export function ScrollType({
   text,
   className = "",
   children,
+  as: Tag = "p",
 }: {
   text: string;
   className?: string;
   children?: ReactNode;
+  as?: ElementType;
 }) {
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const reduced = usePrefersReducedMotion();
   const [progress, setProgress] = useState(0);
 
@@ -102,7 +104,7 @@ export function ScrollType({
   const shown = Math.round(progress * chars.length);
 
   return (
-    <p ref={ref} className={className}>
+    <Tag ref={ref} className={className}>
       <span className="sr-only">{text}</span>
       <span aria-hidden>
         {chars.map((c, i) => (
@@ -118,6 +120,6 @@ export function ScrollType({
         ))}
       </span>
       {children}
-    </p>
+    </Tag>
   );
 }
