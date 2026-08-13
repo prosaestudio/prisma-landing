@@ -10,7 +10,7 @@ import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SpeedBand } from "@/components/landing/SpeedBand";
 import { Testimonials } from "@/components/landing/Testimonials";
 
-const title = "Prisma — Administra tu WordPress completo solo con IA";
+const title = "El primer plugin para editar tu Wordpress 100% con IA";
 const description =
   "Prisma es el agente de IA que arregla bugs, gestiona plugins y edita el diseño de tu sitio WordPress en tiempo real por chat.";
 
