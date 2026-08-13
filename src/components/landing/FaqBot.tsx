@@ -129,9 +129,18 @@ export function FaqBot() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Cerrar asistente" : "Abrir asistente de preguntas frecuentes"}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-xl transition-transform hover:scale-105"
+        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-foreground shadow-xl transition-transform hover:scale-105"
       >
-        {open ? <X size={22} /> : <MessageCircle size={24} />}
+        <span className="absolute inset-0 rounded-full bg-foreground/30 animate-ping" />
+        {open ? (
+          <X size={22} className="relative text-background" />
+        ) : (
+          <img
+            src={ballIcon.url}
+            alt=""
+            className="relative h-10 w-10 rounded-full object-cover"
+          />
+        )}
       </button>
     </div>
   );
