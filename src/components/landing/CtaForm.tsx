@@ -16,7 +16,7 @@ export function CtaForm() {
     >
       <div className="mx-auto max-w-[1440px]">
         <Reveal as="h2" className="mx-auto max-w-[700px] text-center font-serif text-[9vw] font-light leading-[0.95] tracking-[-0.04em] lg:text-[58px]">
-          Dejános tus datos y sé el primero en entrar al prisma
+          Déjanos tus datos y sé el primero en entrar al prisma
         </Reveal>
 
         <Reveal delay={140} className="mx-auto mt-14 grid max-w-[1040px] gap-6 lg:grid-cols-[220px_1fr] lg:items-stretch">
