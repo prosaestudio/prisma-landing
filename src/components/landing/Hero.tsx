@@ -271,7 +271,7 @@ export function Hero() {
                       const pos = [
                         "left-[-14%] top-[6%] w-[190px] lg:w-[230px]",
                         "left-1/2 top-[-4%] w-[190px] -translate-x-1/2 lg:w-[240px]",
-                        "right-[-14%] top-[6%] w-[190px] lg:w-[230px]",
+                        "right-[0%] top-[6%] w-[190px] lg:w-[230px]",
                       ][i];
                       const active = i === activeBall;
                       return (
