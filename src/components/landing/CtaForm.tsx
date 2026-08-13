@@ -12,7 +12,7 @@ export function CtaForm() {
   return (
     <section
       id="demo"
-      className="relative z-10 overflow-hidden rounded-t-[181px] bg-form-sand px-6 pb-16 pt-24 lg:px-12"
+      className="relative z-10 overflow-hidden rounded-t-[120px] bg-form-sand px-6 pb-16 pt-24 lg:rounded-t-[181px] lg:px-12"
     >
       <div className="mx-auto max-w-[1440px]">
         <Reveal as="h2" className="mx-auto max-w-[700px] text-center font-serif text-[9vw] font-light leading-[0.95] tracking-[-0.04em] lg:text-[58px]">
