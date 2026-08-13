@@ -7,7 +7,7 @@ const bottomRight = ["Linkedin", "Instagram", "Whatsapp"];
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 mx-auto max-w-[1180px] px-6 pb-24 pt-10 lg:px-12">
+    <footer className="relative z-10 pb-24 pt-10">
       <img
         src={bgPrisma.url}
         alt=""
@@ -15,7 +15,8 @@ export function SiteFooter() {
         loading="lazy"
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div className="overflow-hidden rounded-[20px] bg-ink px-8 pb-0 pt-8 text-primary-foreground">
+      <div className="mx-auto max-w-[1180px] px-6 lg:px-12">
+        <div className="overflow-hidden rounded-[20px] bg-ink px-8 pb-0 pt-8 text-primary-foreground">
         <nav className="flex flex-wrap items-center justify-center gap-6 lg:justify-end lg:gap-12">
           {top.map((l) => (
             <a
