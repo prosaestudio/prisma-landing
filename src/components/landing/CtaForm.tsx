@@ -19,12 +19,12 @@ export function CtaForm() {
           Dejános tus datos y sé el primero en entrar al prisma
         </Reveal>
 
-        <Reveal delay={140} className="mx-auto mt-14 grid max-w-[1040px] gap-6 lg:grid-cols-[220px_1fr] lg:items-start">
+        <Reveal delay={140} className="mx-auto mt-14 grid max-w-[1040px] gap-6 lg:grid-cols-[220px_1fr] lg:items-stretch">
           <img
             src={cieloForm.url}
             alt="Equipo trabajando al aire libre con Prisma"
             loading="lazy"
-            className="h-[220px] w-full rounded-[14px] object-cover"
+            className="h-[220px] w-full rounded-[14px] object-cover lg:h-full"
           />
           <form className="grid gap-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
             {fields.map((f) => (
