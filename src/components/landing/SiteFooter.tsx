@@ -7,13 +7,13 @@ const bottomRight = ["Linkedin", "Instagram", "Whatsapp"];
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 pb-24 pt-10">
+    <footer className="relative z-10 pt-10">
       <img
         src={bgPrisma.url}
         alt=""
         aria-hidden
         loading="lazy"
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover object-[center_150%]"
+        className="pointer-events-none absolute inset-0 -z-10 h-[120%] w-full object-cover object-bottom"
       />
       <div className="mx-auto max-w-[1180px] px-6 lg:px-12">
         <div className="overflow-hidden rounded-[20px] bg-ink px-8 pb-0 pt-8 text-primary-foreground">
