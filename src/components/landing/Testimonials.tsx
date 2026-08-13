@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { Reveal } from "@/components/landing/Reveal";
 
 const quotes = [
@@ -41,84 +40,18 @@ const quotes = [
 ];
 
 export function Testimonials() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const interacting = useRef(false);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const id = window.setInterval(() => {
-      if (interacting.current) return;
-      const card = el.firstElementChild as HTMLElement | null;
-      if (!card) return;
-      const step = card.offsetWidth + 24;
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
-      el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: "smooth" });
-    }, 5000);
-    return () => window.clearInterval(id);
-  }, []);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    let startX = 0;
-    let startScroll = 0;
-    let dragging = false;
-
-    const down = (e: PointerEvent) => {
-      if (e.pointerType !== "mouse") return;
-      dragging = true;
-      interacting.current = true;
-      startX = e.clientX;
-      startScroll = el.scrollLeft;
-      el.setPointerCapture(e.pointerId);
-      el.style.cursor = "grabbing";
-      el.style.scrollSnapType = "none";
-    };
-    const move = (e: PointerEvent) => {
-      if (!dragging) return;
-      el.scrollLeft = startScroll - (e.clientX - startX);
-    };
-    const up = () => {
-      if (!dragging) return;
-      dragging = false;
-      el.style.cursor = "";
-      el.style.scrollSnapType = "";
-      window.setTimeout(() => {
-        interacting.current = false;
-      }, 2500);
-    };
-
-    el.addEventListener("pointerdown", down);
-    el.addEventListener("pointermove", move);
-    el.addEventListener("pointerup", up);
-    el.addEventListener("pointercancel", up);
-    el.addEventListener("touchstart", () => (interacting.current = true), { passive: true });
-    return () => {
-      el.removeEventListener("pointerdown", down);
-      el.removeEventListener("pointermove", move);
-      el.removeEventListener("pointerup", up);
-      el.removeEventListener("pointercancel", up);
-    };
-  }, []);
-
   return (
-    <section id="experiencias" className="mt-28" aria-roledescription="carrusel">
-      <div
-        ref={trackRef}
-        className="no-scrollbar flex snap-x snap-mandatory items-stretch gap-6 overflow-x-auto scroll-smooth px-6 cursor-grab select-none lg:px-12"
-        style={{ scrollbarWidth: "none" }}
-      >
+    <section id="experiencias" className="mt-28">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-5 px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-12">
         {quotes.map((q, i) => (
           <Reveal
             as="blockquote"
             key={q.name}
             delay={Math.min(i, 2) * 120}
-            className="flex w-[86vw] shrink-0 snap-start flex-col justify-between rounded-[27px] border border-foreground bg-background px-10 py-12 font-sans text-[24px] font-light leading-[1.05] sm:w-[440px] lg:text-[26px]"
+            className="flex flex-col justify-between rounded-[24px] border border-foreground bg-background px-8 py-9 font-sans text-[18px] font-light leading-[1.08] lg:text-[20px]"
           >
             <p>{q.quote}</p>
-            <footer className="mt-10 font-sans text-[13px] leading-[1.3] not-italic">
+            <footer className="mt-8 font-sans text-[13px] leading-[1.3] not-italic">
               <span className="font-medium">— {q.name}</span>
               <br />
               <span className="text-muted-foreground">{q.role}</span>
