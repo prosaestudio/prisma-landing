@@ -1,5 +1,5 @@
 import bgPrisma from "@/assets/bg-prisma.png.asset.json";
-import logoFooter from "@/assets/logo-footer-pill.png.asset.json";
+import logoFooter from "@/assets/logo-footer-5.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
@@ -34,23 +34,12 @@ export function SiteFooter() {
             </a>
           </nav>
 
-          <div className="mt-20 flex items-end justify-between gap-3 lg:gap-6">
-            <img
-              src={logoFooter.url}
-              alt=""
-              aria-hidden
-              loading="lazy"
-              className="mb-1.5 h-[30px] w-auto max-w-full shrink-0 object-contain object-left lg:mb-3 lg:h-[62px]"
-            />
-            <div className="relative pr-[24px] lg:pr-[46px]">
-              <span className="block font-display text-[11vw] font-medium leading-[0.7] tracking-[-0.045em] lg:text-[172px]">
-                Prisma
-              </span>
-              <span className="absolute right-0 top-[3px] font-display text-[18px] leading-none lg:top-[6px] lg:text-[34px]">
-                ®
-              </span>
-            </div>
-          </div>
+          <img
+            src={logoFooter.url}
+            alt="Prisma"
+            loading="lazy"
+            className="mt-20 h-auto w-full object-contain object-left"
+          />
 
           <div className="mt-8 border-t border-primary-foreground/40 py-4">
             <nav className="flex flex-wrap items-center gap-x-10 gap-y-3">
