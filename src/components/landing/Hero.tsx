@@ -277,7 +277,7 @@ export function Hero() {
                 </span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
-              <div className="animate-fade-in relative h-[300px] w-full lg:h-[380px]">
+              <div className="animate-fade-in relative h-[220px] w-full lg:h-[380px]">
                 {isDesk ? (
                   <>
                     {balls.map((b, i) => {
