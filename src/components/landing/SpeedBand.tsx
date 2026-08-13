@@ -38,7 +38,7 @@ export function SpeedBand() {
 
           <Reveal delay={150} className="mt-14 flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-[470px]">
-              <p className="text-center font-mono text-[15px] font-light uppercase leading-[1.6] tracking-[-0.02em] text-[oklch(1_0_0)]">
+              <p className="text-center font-mono text-[12px] font-light uppercase leading-[1.6] tracking-[-0.02em] text-[oklch(1_0_0)]">
                 Deja de luchar con el código, los errores de plugins y la maquetación. PRISMA es el
                 agente de IA que arregla, diseña y optimiza tu sitio WordPress en tiempo real a
                 través de conversación.
