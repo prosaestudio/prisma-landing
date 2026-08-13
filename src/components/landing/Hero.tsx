@@ -128,6 +128,12 @@ function AnimatedStat({
   );
 }
 
+const firstSlidePrompts = [
+  "Quiero cambiar el logo del header...",
+  "Conecta mi dominio...",
+  "Vincula las redes sociales...",
+];
+
 export function Hero() {
   const [index, setIndex] = useState(0);
   const [typed, setTyped] = useState("");
@@ -147,18 +153,70 @@ export function Hero() {
   }, [isDesk]);
 
   useEffect(() => {
-    setTyped("");
-    let i = 0;
-    const typer = window.setInterval(() => {
-      i += 1;
-      setTyped(prompt.slice(0, i));
-      if (i >= prompt.length) window.clearInterval(typer);
-    }, 45);
+    const timers: number[] = [];
+    const clearAll = () => timers.forEach(window.clearTimeout);
+
+    if (index !== 0) {
+      setTyped("");
+      let i = 0;
+      const typer = window.setInterval(() => {
+        i += 1;
+        setTyped(prompt.slice(0, i));
+        if (i >= prompt.length) window.clearInterval(typer);
+      }, 45);
+      timers.push(window.setTimeout(() => {
+        window.clearInterval(typer);
+      }, 6500));
+      const next = window.setTimeout(() => {
+        setIndex((v) => (v + 1) % slides.length);
+      }, 6500);
+      return () => {
+        clearAll();
+        window.clearInterval(typer);
+        window.clearTimeout(next);
+      };
+    }
+
+    // First slide: rotate three prompts with type / pause / erase
+    let promptIdx = 0;
+    let phase: "typing" | "pause" | "erasing" = "typing";
+    let charIdx = 0;
+
+    const step = () => {
+      const current = firstSlidePrompts[promptIdx]!;
+      if (phase === "typing") {
+        charIdx += 1;
+        setTyped(current.slice(0, charIdx));
+        if (charIdx >= current.length) {
+          phase = "pause";
+          timers.push(window.setTimeout(() => {
+            phase = "erasing";
+            step();
+          }, 1400));
+        } else {
+          timers.push(window.setTimeout(step, 42));
+        }
+      } else if (phase === "erasing") {
+        charIdx -= 1;
+        setTyped(current.slice(0, charIdx));
+        if (charIdx <= 0) {
+          phase = "typing";
+          promptIdx = (promptIdx + 1) % firstSlidePrompts.length;
+          timers.push(window.setTimeout(step, 250));
+        } else {
+          timers.push(window.setTimeout(step, 26));
+        }
+      }
+    };
+
+    step();
+
     const next = window.setTimeout(() => {
       setIndex((v) => (v + 1) % slides.length);
-    }, 6500);
+    }, 11500);
+
     return () => {
-      window.clearInterval(typer);
+      clearAll();
       window.clearTimeout(next);
     };
   }, [index, prompt]);
