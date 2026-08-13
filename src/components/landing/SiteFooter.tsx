@@ -80,6 +80,7 @@ export function SiteFooter() {
           </nav>
         </div>
       </div>
+    </div>
     </footer>
   );
 }
