@@ -258,7 +258,7 @@ export function Hero() {
                     />
                   </>
                 ) : (
-                  <div className="flex h-full flex-col justify-end">
+                  <div className="flex h-full flex-col justify-start pt-2 lg:pt-4">
                     <img
                       src={wordpressBlack.url}
                       alt="WordPress"
