@@ -141,7 +141,7 @@ export function Features() {
       {features.map((f, i) => (
         <article
           key={f.label}
-          className="grid gap-10 border-t border-border py-20 lg:grid-cols-2 lg:items-center"
+          className="grid gap-10 border-t border-border py-14 md:py-20 lg:grid-cols-2 lg:items-center"
         >
           <div className={i % 2 === 1 ? "lg:order-2" : ""}>
             <Reveal as="p" className="label-mono text-muted-foreground">
