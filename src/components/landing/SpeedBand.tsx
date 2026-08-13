@@ -13,7 +13,7 @@ export function SpeedBand() {
           width={1657}
           height={1280}
           loading="lazy"
-          className="h-[735px] w-full object-cover object-[center_26%]"
+          className="h-[735px] w-full object-cover object-[30%_26%]"
         />
         <div
           className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.45_0.06_235/0.3)_0%,oklch(0.45_0.06_235/0)_45%)]"
