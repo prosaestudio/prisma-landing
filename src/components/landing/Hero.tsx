@@ -258,7 +258,7 @@ export function Hero() {
             <div className="grid gap-12 lg:grid-cols-[1fr_535px] lg:items-start">
               <h1
                 key={index}
-                className={`animate-fade-in font-serif text-[12vw] font-light leading-[0.88] tracking-[-0.06em] sm:text-[64px] lg:text-[86px] ${
+                className={`animate-fade-in font-serif text-[10.2vw] font-light leading-[0.88] tracking-[-0.06em] sm:text-[64px] lg:text-[86px] ${
                   isBlue ? "max-w-[520px]" : "max-w-[820px]"
                 }`}
               >
