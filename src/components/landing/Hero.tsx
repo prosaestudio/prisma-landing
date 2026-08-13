@@ -367,6 +367,24 @@ export function Hero() {
             </div>
           </div>
         </div>
+
+        <div className="flex items-center justify-center gap-0 py-6 lg:hidden" role="tablist" aria-label="Ejemplos">
+          {slides.map((s, i) => (
+            <button
+              key={s.prompt}
+              type="button"
+              role="tab"
+              aria-selected={i === index}
+              aria-label={s.prompt}
+              onClick={() => setIndex(i)}
+              className={`h-[14px] w-[50px] border border-foreground transition-colors ${
+                i === index ? "bg-foreground" : "bg-transparent"
+              } ${i === 0 ? "rounded-l-full" : ""} ${
+                i === slides.length - 1 ? "rounded-r-full" : "border-r-0"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-12">
