@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { X, Send } from "lucide-react";
 
 import ball from "@/assets/prisma-ball.png.asset.json";
+import ballIcon from "@/assets/prisma-ball-6.png.asset.json";
 
 type Msg = { role: "bot" | "user"; text: string };
 
