@@ -131,14 +131,13 @@ export function FaqBot() {
         aria-label={open ? "Cerrar asistente" : "Abrir asistente de preguntas frecuentes"}
         className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-foreground shadow-xl transition-transform hover:scale-105"
       >
-        <span className="absolute inset-0 rounded-full bg-foreground/30 animate-ping" />
         {open ? (
           <X size={22} className="relative text-background" />
         ) : (
           <img
             src={ballIcon.url}
             alt=""
-            className="relative h-10 w-10 rounded-full object-cover"
+            className="prisma-pulse relative h-10 w-10 rounded-full object-cover"
           />
         )}
       </button>
