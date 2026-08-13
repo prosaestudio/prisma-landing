@@ -13,7 +13,7 @@ export function SiteFooter() {
         alt=""
         aria-hidden
         loading="lazy"
-        className="pointer-events-none absolute left-0 top-[40%] -z-10 h-[160%] w-full object-cover object-bottom"
+        className="pointer-events-none absolute left-0 top-[10%] -z-10 h-[160%] w-full object-cover object-bottom"
       />
       <div className="mx-auto max-w-[1180px] px-6 lg:px-12">
         <div className="overflow-hidden rounded-[20px] bg-ink px-8 pb-0 pt-8 text-primary-foreground">
