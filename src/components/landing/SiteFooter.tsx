@@ -49,9 +49,8 @@ export function SiteFooter() {
               <span className="font-aleo text-[13px] font-light tracking-[-0.03em]">
                 powered by{" "}
                 {bottomLeft.map((l, i) => (
-                  <>
+                  <span key={l.name}>
                     <a
-                      key={l.name}
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -60,7 +59,7 @@ export function SiteFooter() {
                       {l.name}
                     </a>
                     {i === 0 && <span className="mx-1">y</span>}
-                  </>
+                  </span>
                 ))}
               </span>
             </nav>
