@@ -14,7 +14,8 @@ import { Nav } from "@/components/landing/Nav";
 
 const slides = [
   {
-    lead: "Administra tu wordpress completo",
+    lead: "Administra tu",
+    lead2: "wordpress completo",
     accent: "solo con IA",
     prompt: "Quiero cambiar el logo del header...",
   },
@@ -262,7 +263,15 @@ export function Hero() {
                 }`}
               >
                 {slide.lead}
+                {"lead2" in slide && slide.lead2 ? (
+                  <>
+                    <br className="hidden lg:block" /> {slide.lead2}
+                  </>
+                ) : null}
                 <br className="md:hidden" />
+                {"lead2" in slide && slide.lead2 ? (
+                  <br className="hidden lg:block" />
+                ) : null}
                 <span className="font-medium">{slide.accent}</span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
