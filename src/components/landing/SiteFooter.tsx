@@ -1,5 +1,5 @@
 import bgPrisma from "@/assets/bg-prisma.png.asset.json";
-import logoFooter from "@/assets/logo-footer-3.png.asset.json";
+import logoFooter from "@/assets/logo-footer-pill.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
@@ -43,9 +43,12 @@ export function SiteFooter() {
             loading="lazy"
             className="mb-3 h-[62px] w-auto max-w-full shrink-0 object-contain object-left"
           />
-          <div className="relative">
+          <div className="relative pr-[46px]">
             <span className="block font-display text-[17vw] font-medium leading-[0.7] tracking-[-0.045em] lg:text-[172px]">
               Prisma
+            </span>
+            <span className="absolute right-0 top-[6px] font-display text-[34px] leading-none">
+              ®
             </span>
           </div>
         </div>
