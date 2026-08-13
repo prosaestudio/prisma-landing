@@ -10,9 +10,11 @@ const cards = [
 export function MuchoMas() {
   return (
     <section className="mt-24 overflow-hidden">
-      <Reveal as="h2" className="whitespace-nowrap px-6 font-serif text-[18vw] font-light leading-[0.88] tracking-[-0.06em] lg:px-12">
-        Y mucho más
-      </Reveal>
+      <ScrollType
+        as="h2"
+        text="Y mucho más"
+        className="whitespace-nowrap px-6 font-serif text-[18vw] font-light leading-[0.88] tracking-[-0.06em] lg:px-12"
+      />
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <ScrollType
           text="con todo el respaldo y la seguridad que tus sitios necesitan"
