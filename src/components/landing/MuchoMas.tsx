@@ -9,7 +9,7 @@ const cards = [
 
 export function MuchoMas() {
   return (
-    <section className="mt-24 overflow-hidden">
+    <section className="mt-8 overflow-hidden md:mt-24">
       <ScrollType
         as="h2"
         text="Y mucho más"
