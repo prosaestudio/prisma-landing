@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { CtaForm } from "@/components/landing/CtaForm";
 import { Features } from "@/components/landing/Features";
+import { FaqBot } from "@/components/landing/FaqBot";
 import { Hero } from "@/components/landing/Hero";
 import { MuchoMas } from "@/components/landing/MuchoMas";
 import { Showcase } from "@/components/landing/Showcase";
@@ -40,6 +41,7 @@ function Index() {
         <CtaForm />
         <SiteFooter />
       </div>
+      <FaqBot />
     </main>
   );
 }
