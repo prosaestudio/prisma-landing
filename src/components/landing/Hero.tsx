@@ -291,7 +291,7 @@ export function Hero() {
                     <img
                       src={desk.url}
                       alt="Escritorio con Prisma"
-                      className="absolute bottom-0 left-1/2 w-[135%] -translate-x-1/2"
+                      className="absolute bottom-0 left-1/2 w-[162%] -translate-x-1/2 translate-y-[15%]"
                     />
                   </>
                 ) : isBlue ? (
