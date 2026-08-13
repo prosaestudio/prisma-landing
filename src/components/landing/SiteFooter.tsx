@@ -45,22 +45,26 @@ export function SiteFooter() {
           />
 
           <div className="mt-8 border-t border-primary-foreground/40 py-4">
-            <nav className="flex flex-wrap items-center gap-x-10 gap-y-3">
-              <span className="font-aleo text-[13px] font-light tracking-[-0.03em]">
+            <nav className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 lg:justify-start">
+              <span className="font-aleo text-[11px] font-light tracking-[-0.03em] md:text-[13px]">
                 powered by{" "}
-                {bottomLeft.map((l, i) => (
-                  <span key={l.name}>
-                    <a
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-semibold transition-opacity hover:opacity-70"
-                    >
-                      {l.name}
-                    </a>
-                    {i === 0 && <span className="mx-1">y</span>}
-                  </span>
-                ))}
+                <a
+                  href="https://alvarocofre.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold transition-opacity hover:opacity-70"
+                >
+                  Alvarocofre.dev
+                </a>{" "}
+                y{" "}
+                <a
+                  href="https://prosaestudio.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold transition-opacity hover:opacity-70"
+                >
+                  Prosa Estudio
+                </a>
               </span>
             </nav>
           </div>
