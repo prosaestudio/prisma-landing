@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import heroGradient from "@/assets/hero-gradient.png.asset.json";
-import imgSlider02 from "@/assets/img-slider-02.png.asset.json";
+import imgSlider02 from "@/assets/img-slider-02-2.png.asset.json";
 import desk from "@/assets/desk.png.asset.json";
 import ball01 from "@/assets/ball-01.png.asset.json";
 import ball02 from "@/assets/ball-02.png.asset.json";
