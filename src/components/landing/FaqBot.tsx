@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send } from "lucide-react";
+import { X, Send } from "lucide-react";
 
 import ball from "@/assets/prisma-ball.png.asset.json";
+import ballIcon from "@/assets/prisma-ball-6.png.asset.json";
 
 type Msg = { role: "bot" | "user"; text: string };
 
@@ -128,9 +129,17 @@ export function FaqBot() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Cerrar asistente" : "Abrir asistente de preguntas frecuentes"}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-xl transition-transform hover:scale-105"
+        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-foreground shadow-xl transition-transform hover:scale-105"
       >
-        {open ? <X size={22} /> : <MessageCircle size={24} />}
+        {open ? (
+          <X size={22} className="relative text-background" />
+        ) : (
+          <img
+            src={ballIcon.url}
+            alt=""
+            className="prisma-pulse relative h-10 w-10 rounded-full object-cover"
+          />
+        )}
       </button>
     </div>
   );
