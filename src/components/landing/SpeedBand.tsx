@@ -45,7 +45,7 @@ export function SpeedBand() {
               </p>
               <a
                 href="#demo"
-                className="mt-8 inline-flex items-center justify-center rounded-full border border-[oklch(1_0_0)] px-9 py-2.5 font-serif text-[26px] font-light tracking-[-0.06em] text-[oklch(1_0_0)] transition-colors hover:bg-[oklch(1_0_0)] hover:text-foreground"
+                className="mx-auto mt-8 flex items-center justify-center rounded-full border border-[oklch(1_0_0)] px-9 py-2.5 font-serif text-[26px] font-light tracking-[-0.06em] text-[oklch(1_0_0)] transition-colors hover:bg-[oklch(1_0_0)] hover:text-foreground"
               >
                 Descárgalo ya
               </a>
