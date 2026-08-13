@@ -1,5 +1,5 @@
 import bgPrisma from "@/assets/bg-prisma.png.asset.json";
-import logoFooter from "@/assets/logo-footer-pill.png.asset.json";
+import logoFooter from "@/assets/logo-footer-5.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
