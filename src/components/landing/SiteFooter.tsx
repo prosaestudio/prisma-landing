@@ -1,3 +1,4 @@
+import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import logoFooter from "@/assets/logo-footer-full.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
