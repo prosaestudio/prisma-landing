@@ -3,7 +3,6 @@ import logoFooter from "@/assets/logo-footer-pill.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
 const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
-const bottomRight = ["Linkedin", "Instagram", "Whatsapp"];
 
 export function SiteFooter() {
   return (
