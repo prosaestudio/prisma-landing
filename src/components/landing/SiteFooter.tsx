@@ -2,7 +2,10 @@ import bgPrisma from "@/assets/bg-prisma.png.asset.json";
 import logoFooter from "@/assets/logo-footer-5.png.asset.json";
 
 const top = ["Instagram", "Linkedin", "Whatsapp", "Prensa"];
-const bottomLeft = ["Terminos y condiciones", "Asistencia", "Políticas de uso"];
+const bottomLeft = [
+  { label: "powered by Alvarocofre.dev", href: "https://alvarocofre.dev/" },
+  { label: "Prosa Studio", href: "https://prosaestudio.com/" },
+];
 
 export function SiteFooter() {
   return (
@@ -45,11 +48,13 @@ export function SiteFooter() {
             <nav className="flex flex-wrap items-center gap-x-10 gap-y-3">
               {bottomLeft.map((l) => (
                 <a
-                  key={l}
-                  href="#"
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-aleo text-[13px] font-light tracking-[-0.03em] transition-opacity hover:opacity-70"
                 >
-                  {l}
+                  {l.label}
                 </a>
               ))}
             </nav>
