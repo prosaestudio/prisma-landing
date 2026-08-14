@@ -307,27 +307,27 @@ export function Hero() {
                       className="absolute bottom-0 left-1/2 w-[162%] -translate-x-1/2 translate-y-[15%]"
                     />
                   </>
-                ) : isBlue ? (
-                  <>
-                    <img
-                      src={site01.url}
-                      alt="Cliente 01"
-                      className="card-float absolute left-[6%] top-0 w-[210px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
-                      style={{ animationDelay: "0s" }}
-                    />
-                    <img
-                      src={site02.url}
-                      alt="Cliente 02"
-                      className="card-float absolute right-[-8%] top-[96px] w-[224px] lg:w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
-                      style={{ animationDelay: "1.4s" }}
-                    />
-                    <img
-                      src={site03.url}
-                      alt="Cliente 03"
-                      className="card-float absolute left-[0%] top-[188px] w-[210px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
-                      style={{ animationDelay: "2.6s" }}
-                    />
-                  </>
+) : isBlue ? (
+  <>
+    <img
+      src={site01.url}
+      alt="Cliente 01"
+      className="card-float absolute left-[6%] top-0 w-[147px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      style={{ animationDelay: "0s" }}
+    />
+    <img
+      src={site02.url}
+      alt="Cliente 02"
+      className="card-float absolute right-[-8%] top-[96px] w-[157px] lg:w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      style={{ animationDelay: "1.4s" }}
+    />
+    <img
+      src={site03.url}
+      alt="Cliente 03"
+      className="card-float absolute left-[0%] top-[188px] w-[147px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      style={{ animationDelay: "2.6s" }}
+    />
+  </>
                 ) : (
                   <div className="flex h-full flex-col justify-start pt-2 lg:pt-4 lg:-translate-x-[15%]">
                     <img
