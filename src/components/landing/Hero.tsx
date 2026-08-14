@@ -21,6 +21,7 @@ const slides = [
   },
   {
     lead: "Arregla errores de tu sitio",
+    lead2: "",
     accent: "sin tocar código",
     prompt: "¿Puedes reparar el error de la página de quienes somos?",
   },
