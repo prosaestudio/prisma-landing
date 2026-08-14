@@ -274,7 +274,7 @@ export function Hero() {
                       : "max-md:block"
                   }`}
                 >
-                  {slide.accent}
+                  {" "}{slide.accent}
                 </span>
                 {"tail" in slide && slide.tail ? <> {slide.tail}</> : null}
               </h1>
