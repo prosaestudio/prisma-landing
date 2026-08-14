@@ -324,7 +324,7 @@ export function Hero() {
     <img
       src={site03.url}
       alt="Cliente 03"
-      className="card-float absolute left-[0%] top-[188px] w-[147px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      className="card-float absolute left-[0%] top-[132px] w-[147px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
       style={{ animationDelay: "2.6s" }}
     />
   </>
