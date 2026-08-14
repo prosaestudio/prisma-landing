@@ -313,19 +313,19 @@ export function Hero() {
     <img
       src={site01.url}
       alt="Cliente 01"
-      className="card-float absolute left-[6%] top-0 w-[147px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      className="card-float absolute left-[6%] top-0 w-[147px] lg:left-[2%] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
       style={{ animationDelay: "0s" }}
     />
     <img
       src={site02.url}
       alt="Cliente 02"
-      className="card-float absolute right-[-8%] top-[96px] w-[157px] lg:w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      className="card-float absolute right-[-8%] top-[96px] w-[157px] lg:right-[-16%] lg:w-[320px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
       style={{ animationDelay: "1.4s" }}
     />
     <img
       src={site03.url}
       alt="Cliente 03"
-      className="card-float absolute left-[0%] top-[132px] w-[147px] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
+      className="card-float absolute left-[0%] top-[132px] w-[147px] lg:left-[-6%] lg:w-[300px] drop-shadow-[0_18px_40px_oklch(0_0_0/0.18)]"
       style={{ animationDelay: "2.6s" }}
     />
   </>
