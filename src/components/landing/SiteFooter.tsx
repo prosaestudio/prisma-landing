@@ -15,7 +15,7 @@ export function SiteFooter() {
       />
       <div className="mx-auto max-w-[1180px] px-6 lg:px-12">
         <div className="overflow-hidden rounded-[20px] bg-ink px-8 pb-0 pt-8 text-primary-foreground">
-          <nav className="flex flex-wrap items-center justify-center gap-6 lg:justify-end lg:gap-12">
+          <nav className="flex flex-wrap items-center justify-start gap-6 lg:justify-end lg:gap-12">
             {top.map((l) => (
               <a
                 key={l}
