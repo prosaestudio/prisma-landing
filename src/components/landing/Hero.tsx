@@ -21,6 +21,7 @@ const slides = [
   },
   {
     lead: "Arregla errores de tu sitio",
+    lead2: "",
     accent: "sin tocar código",
     prompt: "¿Puedes reparar el error de la página de quienes somos?",
   },
@@ -263,12 +264,12 @@ export function Hero() {
                 }`}
               >
                 {slide.lead}
-                {"lead2" in slide && slide.lead2 ? (
+                {"lead2" in slide ? (
                   <span className="lg:block"> {slide.lead2}</span>
                 ) : null}
                 <span
                   className={`font-medium ${
-                    "lead2" in slide && slide.lead2
+                    "lead2" in slide
                       ? "block"
                       : "max-md:block"
                   }`}
