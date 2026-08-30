@@ -1,4 +1,4 @@
-import imgForm from "@/assets/img-form.png.asset.json";
+import imgForm from "@/assets/bg-prisma-02.jpg.asset.json";
 import { Reveal } from "@/components/landing/Reveal";
 
 const fields = [
