@@ -3,7 +3,7 @@ import { Reveal } from "@/components/landing/Reveal";
 
 const fields = [
   { label: "Nombre", name: "nombre", type: "text" },
-  { label: "Apellido", name: "apellido", type: "text" },
+  { label: "Correo", name: "email", type: "email" },
 ];
 
 export function CtaForm() {
