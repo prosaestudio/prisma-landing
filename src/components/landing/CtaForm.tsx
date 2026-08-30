@@ -4,8 +4,6 @@ import { Reveal } from "@/components/landing/Reveal";
 const fields = [
   { label: "Nombre", name: "nombre", type: "text" },
   { label: "Apellido", name: "apellido", type: "text" },
-  { label: "Empresa", name: "empresa", type: "text" },
-  { label: "Cargo", name: "cargo", type: "text" },
 ];
 
 export function CtaForm() {
@@ -26,7 +24,7 @@ export function CtaForm() {
             loading="lazy"
             className="h-[220px] w-full rounded-[14px] object-cover lg:h-full"
           />
-          <form className="grid gap-4 sm:grid-cols-2" onSubmit={(e) => e.preventDefault()}>
+          <form className="grid gap-4" onSubmit={(e) => e.preventDefault()}>
             {fields.map((f) => (
               <label key={f.name} className="block">
                 <span className="sr-only">{f.label}</span>
@@ -38,16 +36,7 @@ export function CtaForm() {
                 />
               </label>
             ))}
-            <label className="block sm:col-span-2">
-              <span className="sr-only">Email</span>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="h-[74px] w-full rounded-[12px] border border-foreground bg-transparent px-6 font-display text-[26px] font-light tracking-[-0.04em] placeholder:text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-              />
-            </label>
-            <div className="mt-2 sm:col-span-2 sm:justify-self-end">
+            <div className="mt-2 sm:justify-self-end">
               <button
                 type="submit"
                 className="h-[58px] w-[152px] rounded-full bg-primary font-aleo text-[28px] font-extralight tracking-[-0.04em] text-primary-foreground transition-opacity hover:opacity-90"
