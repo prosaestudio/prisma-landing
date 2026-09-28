@@ -334,7 +334,7 @@
   }
 }
 
-/* Orbit satellites (Gestor Universal de Plugins) */
+/* Orbit satellites (Gestor Universal vía MCP) */
 @keyframes orbit-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
