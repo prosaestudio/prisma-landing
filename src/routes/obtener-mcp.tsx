@@ -155,7 +155,7 @@ function Page() {
                   </label>
                   <button
                     type="submit"
-                    className="h-[54px] w-full rounded-full bg-primary font-aleo text-[22px] font-extralight tracking-[-0.04em] text-primary-foreground transition-opacity hover:opacity-90"
+                    className="h-[54px] w-full rounded-full bg-ink font-aleo text-[22px] font-extralight tracking-[-0.04em] text-primary-foreground transition-opacity hover:opacity-90"
                   >
                     Obtener MCP
                   </button>
