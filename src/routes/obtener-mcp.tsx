@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import bg from "@/assets/bg-prisma-02.jpg.asset.json";
 import { Nav } from "@/components/landing/Nav";
 import { Reveal } from "@/components/landing/Reveal";
 import { SiteFooter } from "@/components/landing/SiteFooter";
