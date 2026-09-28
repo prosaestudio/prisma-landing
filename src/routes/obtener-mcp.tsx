@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 import { Nav } from "@/components/landing/Nav";
 import { Reveal } from "@/components/landing/Reveal";
@@ -55,11 +55,6 @@ function Page() {
   return (
     <main className="min-h-screen bg-background">
       <Nav />
-      <div className="mx-auto max-w-[1180px] px-6 pt-4 lg:px-12">
-        <p className="font-display text-sm font-light opacity-70">
-          <Link to="/" className="hover:opacity-60">Inicio</Link> / Obtener MCP
-        </p>
-      </div>
       <section className="mx-auto grid max-w-[1180px] gap-12 px-6 pb-24 pt-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:px-12">
         <div>
           <Reveal as="h1" className="font-serif text-[11vw] font-light leading-[0.95] tracking-[-0.04em] lg:text-[68px]">
