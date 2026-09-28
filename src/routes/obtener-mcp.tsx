@@ -66,7 +66,7 @@ function Page() {
           <ol className="mt-10 border-b border-foreground/30">
             {points.map(([t, d], i) => (
               <Reveal as="li" key={t} delay={i * 60} className="grid grid-cols-[56px_1fr] border-t border-foreground/30 py-6">
-                <span className="label-mono !text-sm opacity-60">{String(i + 1).padStart(2, "0")}</span>
+                <span className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-full bg-ink font-mono text-xs tracking-[-0.06em] text-primary-foreground">{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="font-serif text-2xl font-light tracking-[-0.03em]">{t}</h3>
                   <p className="mt-2 font-display text-base font-light opacity-75">{d}</p>
