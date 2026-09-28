@@ -89,7 +89,7 @@ function Page() {
               <span className="inline-block rounded-full border border-foreground bg-background px-4 py-1 label-mono !text-xs">
                 Acceso anticipado · cupos limitados
               </span>
-              <h2 className="mt-8 font-serif text-4xl font-light tracking-[-0.04em]">Obtener MCP</h2>
+              <h2 className="mt-16 font-serif text-4xl font-light tracking-[-0.04em]">Obtener MCP</h2>
               <p className="mt-3 font-display text-base font-light opacity-80">
                 Revisamos cada solicitud y te llega tu licencia con el instalador y las instrucciones.
               </p>
