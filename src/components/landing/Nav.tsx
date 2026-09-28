@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logoHeader from "@/assets/logo-header.png.asset.json";
 import logoWhite from "@/assets/logo-prisma-white.png.asset.json";
 import logoWhiteMobile from "@/assets/logo-white-mobile.png.asset.json";
 import bgMobile from "@/assets/bg-mobile.png.asset.json";
 
 const links = [
-  { label: "Solución", href: "#solucion" },
-  { label: "Cómo funciona", href: "#como-funciona" },
-  { label: "Features", href: "#features" },
-  { label: "Experiencias", href: "#experiencias" },
+  { label: "Solución", href: "/#solucion" },
+  { label: "Cómo funciona", href: "/#como-funciona" },
+  { label: "Features", href: "/#features" },
+  { label: "Experiencias", href: "/#experiencias" },
 ];
 
 export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
@@ -69,16 +70,16 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
             </a>
           ))}
         </nav>
-        <a
-          href="#demo"
+        <Link
+          to="/obtener-mcp"
           className={`hidden rounded-full border px-7 py-2 font-aleo text-lg font-light tracking-[-0.05em] transition-transform hover:translate-y-[2px] hover:shadow-none md:block ${
             light
               ? "border-foreground bg-white text-foreground shadow-[0_3px_0_0_oklch(0_0_0/0.9)]"
               : "border-foreground shadow-[0_3px_0_0_var(--color-foreground)]"
           }`}
         >
-          Get a demo
-        </a>
+          Obtener MCP
+        </Link>
       </header>
 
       {open && (
@@ -120,16 +121,16 @@ export function Nav({ variant = "dark" }: { variant?: "dark" | "light" }) {
                 {l.label}
               </a>
             ))}
-            <a
-              href="#demo"
+            <Link
+              to="/obtener-mcp"
               onClick={closeMenu}
               className={`mt-4 rounded-full border border-white bg-white px-7 py-2 font-aleo text-xl font-light tracking-[-0.05em] text-foreground shadow-[0_3px_0_0_oklch(0_0_0/0.9)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
               }`}
               style={{ transitionDelay: visible ? `${120 + links.length * 90}ms` : "0ms" }}
             >
-              Get a demo
-            </a>
+              Obtener MCP
+            </Link>
           </nav>
 
           <img

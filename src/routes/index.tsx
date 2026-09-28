@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { CtaForm } from "@/components/landing/CtaForm";
+import { Pricing } from "@/components/landing/Pricing";
 import { Features } from "@/components/landing/Features";
 import { FaqBot } from "@/components/landing/FaqBot";
 import { Hero } from "@/components/landing/Hero";
@@ -38,7 +38,7 @@ function Index() {
       <MuchoMas />
       <Testimonials />
       <div className="mt-28">
-        <CtaForm />
+        <Pricing />
         <SiteFooter />
       </div>
       <FaqBot />

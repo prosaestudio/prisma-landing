@@ -25,7 +25,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "¿Cuánto cuesta?",
-    a: "Estamos en fase de acceso temprano. Deja tus datos en el formulario \"Get a demo\" y te enviamos los planes y una demo personalizada sin costo.",
+    a: "Estamos en fase de acceso temprano. Deja tus datos en la sección de planes, elige el tuyo y presiona \"Obtener MCP\".",
   },
   {
     q: "¿Cuánto tiempo toma implementarlo?",
@@ -37,7 +37,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "¿Puedo pedir una demo?",
-    a: "Claro. Baja hasta la sección \"Get a demo\" y completa el formulario: te contactamos el mismo día.",
+    a: "Claro. Presiona \"Obtener MCP\", elige tu plan y completa el formulario: te contactamos el mismo día.",
   },
 ];
 
