@@ -77,7 +77,7 @@ export function Pricing() {
                       : "border-foreground shadow-[0_3px_0_0_var(--color-foreground)] hover:shadow-none"
                   }`}
                 >
-                  Obtener MCP
+                  Seleccionar
                 </Link>
               </Reveal>
             );
