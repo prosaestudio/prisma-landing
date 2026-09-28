@@ -84,12 +84,8 @@ function Page() {
 
         <aside className="lg:sticky lg:top-6 lg:self-start">
           <Reveal className="relative overflow-hidden rounded-[24px] border border-foreground bg-form-sand p-7 lg:p-9">
-            <img src={bg.url} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-28 w-full object-cover opacity-70" />
             <div className="relative">
-              <span className="inline-block rounded-full border border-foreground bg-background px-4 py-1 label-mono !text-xs">
-                Acceso anticipado · cupos limitados
-              </span>
-              <h2 className="mt-16 font-serif text-4xl font-light tracking-[-0.04em]">Obtener MCP</h2>
+              <h2 className="font-serif text-4xl font-light tracking-[-0.04em]">Obtener MCP</h2>
               <p className="mt-3 font-display text-base font-light opacity-80">
                 Revisamos cada solicitud y te llega tu licencia con el instalador y las instrucciones.
               </p>
