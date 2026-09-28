@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ObtenerMcpRouteImport } from './routes/obtener-mcp'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObtenerMcpRoute = ObtenerMcpRouteImport.update({
+  id: '/obtener-mcp',
+  path: '/obtener-mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/obtener-mcp': typeof ObtenerMcpRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/obtener-mcp': typeof ObtenerMcpRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/obtener-mcp': typeof ObtenerMcpRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/obtener-mcp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/obtener-mcp'
+  id: '__root__' | '/' | '/obtener-mcp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ObtenerMcpRoute: typeof ObtenerMcpRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/obtener-mcp': {
+      id: '/obtener-mcp'
+      path: '/obtener-mcp'
+      fullPath: '/obtener-mcp'
+      preLoaderRoute: typeof ObtenerMcpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ObtenerMcpRoute: ObtenerMcpRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
