@@ -42,7 +42,7 @@ const stats = [
   },
   {
     value: "0",
-    copy: "Líneas de código tocadas manualmente para modificar plantillas, estilos o funciones de plugins.",
+    copy: "Líneas de código tocadas manualmente para modificar plantillas, estilos o funciones de tu sitio vía MCP.",
   },
   {
     value: "92%",
@@ -50,7 +50,7 @@ const stats = [
   },
   {
     value: "15 hrs",
-    copy: "Ahorradas a la semana por desarrollador al delegar la corrección de bugs al agente conversacional.",
+    copy: "Ahorradas a la semana por desarrollador al delegar la corrección de bugs al MCP conversacional.",
   },
   {
     value: "100%",

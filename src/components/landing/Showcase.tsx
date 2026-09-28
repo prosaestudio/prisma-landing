@@ -5,7 +5,7 @@ import c2 from "@/assets/carrousel-02.png.asset.json";
 import c3 from "@/assets/carrousel-03.png.asset.json";
 
 const slides = [
-  { src: c1.url, alt: "Funciona con tus plugins y componentes favoritos", w: 1376, h: 1000 },
+  { src: c1.url, alt: "Prisma MCP funciona con tu WordPress y tus componentes favoritos", w: 1376, h: 1000 },
   { src: c2.url, alt: "Guarda y continúa las conversaciones", w: 1510, h: 991 },
   { src: c3.url, alt: "Controla tus cambios y ajustes", w: 1510, h: 991 },
 ];

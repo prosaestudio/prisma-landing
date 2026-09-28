@@ -10,9 +10,9 @@ import { SiteFooter } from "@/components/landing/SiteFooter";
 import { SpeedBand } from "@/components/landing/SpeedBand";
 import { Testimonials } from "@/components/landing/Testimonials";
 
-const title = "El primer plugin para editar tu Wordpress 100% con IA";
+const title = "El primer MCP para editar tu WordPress 100% con IA";
 const description =
-  "Prisma es el agente de IA que arregla bugs, gestiona plugins y edita el diseño de tu sitio WordPress en tiempo real por chat.";
+  "Prisma es el MCP de WordPress que arregla bugs, gestiona plugins y temas, y edita el diseño de tu sitio en tiempo real por chat.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
