@@ -9,7 +9,7 @@ type Msg = { role: "bot" | "user"; text: string };
 const faqs: { q: string; a: string }[] = [
   {
     q: "¿Cómo funciona Prisma?",
-    a: "Conectas tu sitio WordPress a Prisma y le hablas por chat: \"cambia el logo del header\", \"repara el error de la página Quiénes somos\", \"instala y configura este plugin\". Prisma entiende la instrucción, la ejecuta en tu sitio y te muestra el resultado en tiempo real.",
+    a: "Prisma es un MCP (Model Context Protocol) para WordPress: conectas tu sitio y le hablas por chat: \"cambia el logo del header\", \"repara el error de la página Quiénes somos\", \"instala y configura este plugin\". Prisma entiende la instrucción, la ejecuta en tu sitio y te muestra el resultado en tiempo real.",
   },
   {
     q: "¿Necesito saber programar?",
@@ -17,7 +17,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "¿Funciona con cualquier WordPress?",
-    a: "Sí, funciona con instalaciones self-hosted de WordPress (5.6+), con cualquier tema y con la mayoría de plugins populares. También gestiona multisitio.",
+    a: "Sí, funciona con instalaciones self-hosted de WordPress (5.6+), con cualquier tema y con la mayoría de plugins populares, todo vía MCP. También gestiona multisitio.",
   },
   {
     q: "¿Es seguro? ¿Puede romper mi sitio?",
@@ -29,11 +29,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "¿Cuánto tiempo toma implementarlo?",
-    a: "Menos de 5 minutos: instalas el conector, autorizas el acceso y empiezas a pedirle cambios a Prisma.",
+    a: "Menos de 5 minutos: instalas el conector MCP, autorizas el acceso y empiezas a pedirle cambios a Prisma.",
   },
   {
     q: "¿Qué tareas puede hacer por mí?",
-    a: "Gestión universal de plugins y temas, reemplazo y gestión de assets, edición de diseño, corrección de errores, optimización de velocidad, configuración y vinculación de dominios.",
+    a: "Gestión universal de plugins y temas vía MCP, reemplazo y gestión de assets, edición de diseño, corrección de errores, optimización de velocidad, configuración y vinculación de dominios.",
   },
   {
     q: "¿Puedo pedir una demo?",

@@ -4,7 +4,7 @@ import { Reveal } from "@/components/landing/Reveal";
 const quotes = [
   {
     quote:
-      "“Antes perdíamos mañanas enteras buscando qué plugin hacía conflicto tras una actualización. Ahora solo le escribo a PRISMA: 'Ajusta la tienda y soluciona el checkout' y lo resuelve en segundos. Es literalmente tener un dev senior en el chat.”",
+      "“Antes perdíamos mañanas enteras buscando qué causaba conflictos tras una actualización. Ahora solo le escribo a PRISMA: 'Ajusta la tienda y soluciona el checkout' y lo resuelve en segundos. Es literalmente tener un dev senior en el chat.”",
     name: "Carolina Méndez,",
     role: "Directora de Agencia Digital en PixelStudio",
   },
@@ -16,7 +16,7 @@ const quotes = [
   },
   {
     quote:
-      "“Lo que más me da paz es la seguridad. El agente corrige bugs complejos en producción y si algo no me gusta, lo vuelvo atrás en un clic. Pasamos de demorarnos días en arreglos técnicos a solucionarlo en 2 minutos.”",
+      "“Lo que más me da paz es la seguridad. El MCP corrige bugs complejos en producción y si algo no me gusta, lo vuelvo atrás en un clic. Pasamos de demorarnos días en arreglos técnicos a solucionarlo en 2 minutos.”",
     name: "Valeria Delgado,",
     role: "Product Manager en ScaleMedia",
   },

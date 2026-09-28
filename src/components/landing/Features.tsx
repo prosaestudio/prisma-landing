@@ -11,7 +11,7 @@ import prismaBall3 from "@/assets/prisma-ball-3.png.asset.json";
 import { Reveal, ScrollType } from "@/components/landing/Reveal";
 
 const orbitPills = [
-  { label: "Plugins", radius: 200, angle: -150, duration: 34 },
+  { label: "MCP", radius: 200, angle: -150, duration: 34 },
   { label: "Themes", radius: 168, angle: -35, duration: 28 },
   { label: "Config", radius: 210, angle: 20, duration: 38 },
   { label: "Dominio", radius: 160, angle: 95, duration: 31 },
@@ -25,8 +25,8 @@ const features = [
     visual: "logos" as const,
   },
   {
-    label: "Gestor Universal de Plugins",
-    copy: "Instala, configura, audita o edita funciones de cualquier plugin instalado sin tocar el panel de control.",
+    label: "Gestor Universal vía MCP",
+    copy: "Instala, configura, audita o edita funciones de tu WordPress vía MCP, sin tocar el panel de control.",
     visual: "pills" as const,
   },
   {

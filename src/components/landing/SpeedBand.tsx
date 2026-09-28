@@ -31,7 +31,7 @@ export function SpeedBand() {
           />
 
           <Reveal as="h2" className="text-center font-serif text-[7.5vw] font-light leading-[0.92] tracking-[-0.06em] text-[oklch(1_0_0)] lg:text-[86px]">
-            Más que un plugin
+            Más que un MCP
             <br />
             es editar tus sitios en <span className="font-normal">alta velocidad</span>
           </Reveal>
@@ -40,7 +40,7 @@ export function SpeedBand() {
             <div className="max-w-[470px]">
               <p className="text-center font-mono text-[12px] font-light uppercase leading-[1.6] tracking-[-0.02em] text-[oklch(1_0_0)] lg:text-left lg:text-[15px]">
                 Deja de luchar con el código, los errores de plugins y la maquetación. PRISMA es el
-                agente de IA que arregla, diseña y optimiza tu sitio WordPress en tiempo real a
+                MCP que arregla, diseña y optimiza tu sitio WordPress en tiempo real a
                 través de conversación.
               </p>
               <a
