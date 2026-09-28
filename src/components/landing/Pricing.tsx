@@ -14,7 +14,7 @@ export function BillingToggle({ value, onChange }: { value: Billing; onChange: (
           type="button"
           onClick={() => onChange(b)}
           className={`rounded-full px-6 py-2 font-aleo text-lg font-light capitalize tracking-[-0.04em] transition-colors ${
-            value === b ? "bg-primary text-primary-foreground" : ""
+            value === b ? "bg-ink text-primary-foreground" : ""
           }`}
         >
           {b}
