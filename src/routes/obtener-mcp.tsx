@@ -83,7 +83,7 @@ function Page() {
               <p className="mt-3 font-display text-base font-light opacity-80">
                 Revisamos cada solicitud y te llega tu licencia con el instalador y las instrucciones.
               </p>
-              <p className="mt-4 rounded-[12px] border-l-2 border-foreground bg-background/60 px-4 py-3 font-display text-sm font-light">
+              <p className="mt-4 rounded-[12px] bg-background/60 px-4 py-3 font-display text-sm font-light">
                 <strong className="font-medium">Antes de anotarte:</strong> necesita WordPress 6.9 o superior y PHP 8.1 o superior.
               </p>
 
